@@ -1,0 +1,20 @@
+section#cta {
+  padding: var(--space-8) 0;
+
+  .central-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--space-5);
+
+    p {
+      font-size: var(--text-2xl);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    img {
+      width: 6rem;
+    }
+  }
+}

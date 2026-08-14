@@ -1,0 +1,57 @@
+section#more-projects {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .project-row {
+    display: flex;
+    overflow-x: visible;
+
+    animation: polzek 30s linear infinite running;
+    will-change: transform;
+
+    &:nth-of-type(2) {
+      animation-direction: reverse;
+    }
+  }
+
+  .project-thumb {
+    margin-right: 0.9rem;
+    flex-shrink: 0;
+
+    img {
+      height: 5rem;
+    }
+  }
+
+  .more-text {
+    font-weight: 800;
+    font-size: var(--text-2xl);
+    margin: var(--space-4) 0;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+  }
+
+  mark {
+    color: #fff;
+
+    .highlight {
+      scale: 1.1;
+    }
+  }
+}
+
+@keyframes polzek {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

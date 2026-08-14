@@ -1,0 +1,37 @@
+section#toolbox {
+  background: #f5f5f5;
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-7);
+  }
+
+  span {
+    font-size: var(--text-sm);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .tools-grid {
+    margin-top: var(--space-3);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 6rem);
+    gap: 0.5em;
+  }
+
+  .tools-grid-cell {
+    background: #ebebeb;
+    border-radius: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 2em;
+    }
+  }
+}
