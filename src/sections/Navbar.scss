@@ -1,3 +1,5 @@
+@use '../assets/styles/breakpoints' as bp;
+
 nav {
   position: fixed;
   backdrop-filter: blur(200px);
@@ -16,7 +18,6 @@ nav {
     font-family: var(--sans);
     text-transform: uppercase;
     font-weight: 900;
-    font-size: var(--text-sm);
   }
 
   .nav-left {
@@ -32,5 +33,11 @@ nav {
   .nav-right {
     display: flex;
     gap: var(--space-3);
+  }
+
+  @include bp.tablet {
+    .nav-right {
+      gap: var(--space-5);
+    }
   }
 }

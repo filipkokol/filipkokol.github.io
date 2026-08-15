@@ -6,7 +6,7 @@
   --text-light: #909087;
   --bg: #fff;
   // --border: #e5e4e7;
-  --accent: #aa3bff;
+  // --accent: #aa3bff;
 
   // fonts
   --sans: 'Satoshi-Variable', 'Segoe UI', Roboto, sans-serif;
@@ -32,11 +32,10 @@
   --text-3xl: 3.5rem;
 
   // layout
-  --max-width: 70rem; // max width of the root
+  --max-width: 120rem; // max width of the root
   --radius: 0.5rem;
 
   // font defaults
-  font-size: 16px; // or 100% if i want the default
   font: var(--text-base) / 145% var(--sans); // base = base size; line height 145% (higher); font family
   letter-spacing: 0.011em;
   // color-scheme: light dark;
@@ -100,12 +99,6 @@ button {
   box-sizing: border-box;
 }
 
-@include bp.tablet {
-  .container {
-    padding: 0 var(--space-5);
-  }
-}
-
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -114,6 +107,18 @@ button {
   box-sizing: border-box;
 
   // border: 1px solid red;
+}
+
+@include bp.tablet {
+  .container {
+    padding: 0 var(--space-5);
+  }
+}
+
+@include bp.desktop {
+  .container {
+    padding: 0 var(--space-7);
+  }
 }
 
 section {
@@ -127,7 +132,6 @@ mark {
   background: transparent;
 
   img.highlight {
-    scale: 1.3;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -148,7 +152,9 @@ h3 {
 h1 {
   font-size: var(--text-2xl);
   letter-spacing: -0.03em;
+  line-height: 1;
   margin: var(--space-4) 0;
+  font-size: clamp(var(--text-3xl), 6vw, 6rem);
 }
 
 h2 {
@@ -158,20 +164,54 @@ h2 {
   margin: 0 0 var(--space-2);
 }
 
-@media (min-width: 1024px) {
+h3 {
+  font-size: var(--text-sm);
+}
+
+// @include bp.mobile {
+//   h1 {
+//     font-size: var(--text-2xl);
+//   }
+// }
+
+@include bp.tablet {
   h1 {
-    font-size: var(--text-3xl);
+    font-weight: 600;
+  }
+}
+
+@include bp.tablet {
+  h1 {
+    // font-size: var(--text-3xl);
     margin: var(--space-5) 0;
   }
 
   h2 {
     font-size: var(--text-xl);
   }
+
+  h3 {
+    font-size: var(--text-md);
+  }
+}
+
+@include bp.desktop {
 }
 
 // utility classes
+
 .underlined {
-  text-decoration: underline;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background: currentColor;
+  }
 }
 
 .tags {
@@ -203,4 +243,41 @@ h2 {
   border-radius: 999px;
   padding: 0.2em 1em;
   line-height: 1;
+}
+
+// hovering
+
+@media screen and (hover: hover) {
+  .underlined-hover {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.1em;
+      background: currentColor;
+
+      transition: transform 0.3s;
+      transform-origin: 100%;
+      transform: scaleX(0);
+    }
+
+    &:hover::after {
+      transform-origin: 0%;
+      transform: scaleX(1);
+    }
+  }
+
+  .btn-outlined:hover {
+    background: black;
+    color: #fff;
+
+    img {
+      filter: invert(1);
+      transform: translateX(5px);
+    }
+  }
 }

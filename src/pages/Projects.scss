@@ -1,14 +1,15 @@
+@use '../assets/styles/breakpoints' as bp;
+
 section#projects {
   padding: var(--space-8) 0;
 
   .container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-5);
+    gap: clamp(var(--space-3), 3vw, var(--space-7));
   }
 
   h1 {
-    font-size: var(--text-3xl);
     font-weight: 600;
   }
 
@@ -21,14 +22,13 @@ section#projects {
   }
 
   // PROJECT ROW // TODO: MOVE
-  .project-row,
-  .project-row-main {
+  .project-row {
     display: flex;
     justify-content: space-between;
     gap: var(--space-2);
 
     border-top: 1px solid #aaa;
-    padding: var(--space-4) var(--space-3);
+    padding: var(--space-4) clamp(var(--space-3), 3vw, var(--space-6));
 
     .text {
       display: flex;
@@ -39,7 +39,7 @@ section#projects {
     .project-title {
       font-family: var(--sans);
       font-size: var(--text-lg);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.03em;
       text-decoration: underline;
     }
@@ -47,6 +47,7 @@ section#projects {
     .project-desc {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       gap: var(--space-5);
     }
 
@@ -59,31 +60,58 @@ section#projects {
       font-weight: 500;
       font-size: var(--text-md);
     }
-  }
 
-  .project-row-main {
-    flex-direction: column-reverse;
-    gap: var(--space-5);
-    padding: var(--space-5) var(--space-3);
-
-    .text {
+    &.main {
+      flex-direction: column-reverse;
       gap: var(--space-5);
-    }
 
-    .project-image {
-      width: unset;
-    }
+      .text {
+        gap: var(--space-5);
+      }
 
-    .project-title {
-      font-size: var(--text-xl);
-    }
+      .project-image {
+        width: unset;
+      }
 
-    p {
-      font-size: var(--text-lg);
+      .project-title {
+        font-size: var(--text-xl);
+      }
+
+      p {
+        font-size: var(--text-lg);
+      }
     }
   }
 
   .project-list {
     border-bottom: 1px solid #aaa;
+  }
+
+  @include bp.tablet {
+    .project-row {
+      .text {
+        flex-direction: row;
+        gap: var(--space-2);
+        max-width: 60rem;
+
+        .project-title {
+          font-size: var(--text-md);
+          width: clamp(5rem, 15vw, 18rem);
+          // line-height: 1.5;
+        }
+      }
+
+      &.main {
+        flex-direction: row;
+
+        .project-title {
+          font-size: var(--text-lg);
+        }
+
+        .project-image {
+          max-width: 15rem;
+        }
+      }
+    }
   }
 }

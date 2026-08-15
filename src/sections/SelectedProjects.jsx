@@ -4,6 +4,9 @@ import PapertigerImg from '../assets/img/thumbs/papertiger.png';
 import BusbusImg from '../assets/img/thumbs/busbus.png';
 import SkratekImg from '../assets/img/thumbs/skratek.png';
 import KnjizarnaImg from '../assets/img/thumbs/knjizarna.png';
+// import TelovadbaImg from '../assets/img/thumbs/windex.png';
+// import ZlozekImg from '../assets/img/thumbs/zlozek.png';
+
 import ProjectCard from '../components/ProjectCard';
 
 const SelectedProjects = () => {
@@ -32,6 +35,19 @@ const SelectedProjects = () => {
       tags: ['NodeJS', 'MongoDB', 'Raspberry Pi'],
       img: KnjizarnaImg,
     },
+    // {
+    //   title: 'Telovadba',
+    //   desc: 'A workout planning and training timing app',
+    //   tags: ['Vue.js'],
+    //   img: TelovadbaImg,
+    // },
+    // {
+    //   title: 'Zložek',
+    //   desc: 'Tetris-like browser game.',
+    //   tags: ['p5.js', 'javascript'],
+    //   img: ZlozekImg,
+    // },
+    // TODO: 6 jih najdi in zadnja dva skrij v CSS
   ];
 
   return (

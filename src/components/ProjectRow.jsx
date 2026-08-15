@@ -3,7 +3,7 @@ import Tags from './Tags';
 
 const ProjectRow = ({ slug, title, desc, tags, img, isMain = false }) => {
   return (
-    <div className={'project-row ' + (isMain ? 'project-row-main' : '')}>
+    <div className={'project-row ' + (isMain ? 'main' : '')}>
       <div className="text">
         <Link to={'/project/' + slug}>
           <h3 className="project-title">{title}</h3>

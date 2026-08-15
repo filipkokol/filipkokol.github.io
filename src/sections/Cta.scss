@@ -1,5 +1,14 @@
+@use '../assets/styles/breakpoints' as bp;
+
 section#cta {
   padding: var(--space-8) 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .central-content {
     display: flex;
@@ -8,13 +17,30 @@ section#cta {
     gap: var(--space-5);
 
     p {
-      font-size: var(--text-2xl);
+      font-size: clamp(var(--text-2xl), 5vw, 3rem);
       text-align: center;
       font-weight: 500;
+      max-width: 25rem;
     }
 
     img {
-      width: 6rem;
+      width: clamp(6rem, 12vw, 8rem);
+    }
+  }
+
+  @include bp.tablet {
+    .container {
+      min-height: min(40vw, 30rem);
+    }
+
+    .central-content {
+      flex-direction: row;
+      gap: var(--space-7);
+
+      p {
+        text-align: right;
+        font-weight: 600;
+      }
     }
   }
 }

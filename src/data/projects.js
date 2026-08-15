@@ -6,6 +6,7 @@ const projects = [
     tags: ['GSAP', 'case study'],
     category: 'Frontend',
     img: 'papertiger.png',
+    color: '#D9D2E9',
   },
   {
     slug: 'windex',
@@ -13,6 +14,7 @@ const projects = [
     desc: 'A react website based on a dribble design.',
     category: 'Frontend',
     img: 'windex.png',
+    color: '#D9EAD3',
   },
   {
     slug: 'world-flags',
@@ -20,6 +22,7 @@ const projects = [
     desc: 'World flags learning tool.',
     category: 'Frontend',
     img: 'zastavice.png',
+    color: '#D0DFE3',
   },
   {
     slug: 'besedle',
@@ -27,6 +30,7 @@ const projects = [
     desc: 'Slovenian version of the famous Wordle game.',
     category: 'Frontend',
     img: 'besedle.png',
+    color: '#D9EAD3',
   },
   {
     slug: 'morse-weather',
@@ -34,6 +38,7 @@ const projects = [
     desc: 'Realtime weather given in morse code.',
     category: 'Frontend',
     img: 'vreme.png',
+    color: '#D0E2F3',
   },
   {
     slug: 'knjizarna',
@@ -50,6 +55,7 @@ const projects = [
     img: 'knjizarna.png',
     img_extras: ['knjizarna-2.png', 'knjizarna-3.png'],
     tags: ['NodeJS', 'MongoDB', 'EJS'],
+    color: '#FFF2CC',
   },
   {
     slug: 'busbus',
@@ -57,6 +63,7 @@ const projects = [
     desc: "Ljubljana's bus tracker and driver rating app.",
     category: 'Fullstack',
     img: 'busbus.png',
+    color: '#D0DFE3',
   },
   {
     slug: 'telovadba',
@@ -65,6 +72,7 @@ const projects = [
     category: 'Frontend',
     img: 'telovadba.png',
     tags: ['Vue.js', 'design'],
+    color: '#fff', // TODO
   },
   {
     slug: 'tic-tac-toe',
@@ -72,6 +80,7 @@ const projects = [
     desc: 'A web socket online multiplayer game.',
     category: 'Fullstack',
     img: 'tictactoe.png',
+    color: '#fff', // TODO
   },
   {
     slug: 'skratek',
@@ -80,6 +89,7 @@ const projects = [
     category: 'Games & Visuals',
     img: 'skratek.png',
     tags: ['p5.js', 'javascript'],
+    color: '#C9DAF8',
   },
   {
     slug: 'zlozek',
@@ -87,6 +97,7 @@ const projects = [
     desc: 'Tetris-like browser game.',
     category: 'Games & Visuals',
     img: 'zlozek.png',
+    color: '#D0DFE3',
   },
   {
     slug: 'sine-line',
@@ -94,6 +105,7 @@ const projects = [
     desc: 'A sinusoidal line travelling in space, avoiding objects.',
     category: 'Games & Visuals',
     img: 'crtica.png',
+    color: '#FCE5CD',
   },
   {
     slug: 'krizemka',
@@ -101,6 +113,7 @@ const projects = [
     desc: 'Auto-generated crossword puzzle game from a given topic.',
     category: 'Games & Visuals',
     img: 'krizemka.png',
+    color: '#fff', // TODO
   },
   {
     slug: 'wolfram',
@@ -108,6 +121,7 @@ const projects = [
     desc: 'Linear cellular automata.',
     category: 'Games & Visuals',
     img: 'wolfram.png',
+    color: '#fff', // TODO
   },
 ];
 

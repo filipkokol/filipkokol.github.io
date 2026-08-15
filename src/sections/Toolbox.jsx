@@ -1,5 +1,7 @@
 import './Toolbox.scss';
 
+import highlight from '../../public/rect4.svg';
+
 const Toolbox = () => {
   const imageModules = import.meta.glob('../../public/svg-logos/*.svg', { eager: true });
   const imagesArray = Object.values(imageModules).map((mod) => mod.default);
@@ -10,10 +12,14 @@ const Toolbox = () => {
     <section id="toolbox">
       <div className="container">
         <h1>
-          My <mark>Toolbox</mark>
+          My{' '}
+          <mark>
+            <span>Toolbox</span>
+            <img className="highlight" src={highlight} alt="" />
+          </mark>
         </h1>
 
-        <span>Tech I've used in the past</span>
+        <span className="subtitle">Tech I've used in the past</span>
         <div className="tools-grid">
           {imagesArray.map((img, i) => (
             <div className="tools-grid-cell" key={i}>

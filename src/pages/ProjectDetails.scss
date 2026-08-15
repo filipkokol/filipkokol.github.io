@@ -1,3 +1,5 @@
+@use '../assets/styles/breakpoints' as bp;
+
 section#project-details {
   padding: var(--space-8) 0;
 
@@ -8,15 +10,31 @@ section#project-details {
   }
 
   h1 {
-    font-size: var(--text-3xl);
     font-weight: 600;
   }
 
   h2 {
     text-transform: uppercase;
     font-family: var(--sans);
-    font-size: var(--text-sm);
+    font-size: clamp(var(--text-sm), 2vw, var(--text-lg));
     font-weight: 900;
+  }
+
+  .cover-image {
+    background-color: lightblue;
+
+    img {
+      max-height: 35rem;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin: 0 var(--space-3);
   }
 
   .description {
@@ -27,7 +45,8 @@ section#project-details {
     font-size: var(--text-lg);
     font-weight: 450;
     // color: #444;
-    margin: 0 var(--space-3);
+
+    max-width: 45rem;
 
     p {
       letter-spacing: -0.03em;
@@ -35,10 +54,10 @@ section#project-details {
     }
   }
 
-  .demo-btn {
-    margin-left: var(--space-3);
+  a.link-wrapper {
+    align-self: flex-start;
 
-    img {
+    .demo-btn img {
       height: 0.5em;
     }
   }
@@ -50,5 +69,25 @@ section#project-details {
     flex-direction: column;
     gap: var(--space-5);
     padding: var(--space-5) 0;
+
+    .img-row {
+      display: flex;
+      gap: var(--space-5);
+    }
+  }
+
+  @include bp.tablet {
+    .text-container {
+      margin: var(--space-5) var(--space-7);
+
+      p {
+        font-weight: 550;
+        line-height: 180%;
+      }
+    }
+
+    .img-extras .img-container {
+      flex-direction: row;
+    }
   }
 }

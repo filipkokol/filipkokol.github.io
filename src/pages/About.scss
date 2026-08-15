@@ -1,8 +1,19 @@
+@use '../assets/styles/breakpoints' as bp;
+
 section#about-me {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover-img {
+    max-width: 55rem;
+  }
+
   h1 {
-    font-size: var(--text-3xl);
     text-align: center;
-    margin: var(--space-7) 0;
+    margin: clamp(var(--space-7), 10vw, var(--space-8)) 0;
   }
 
   .description {
@@ -13,6 +24,7 @@ section#about-me {
     font-weight: 450;
     // color: #444;
     margin: 0 var(--space-3);
+    max-width: 40rem;
   }
 
   p {
@@ -26,5 +38,11 @@ section#about-me {
     // letter-spacing: 0;
     gap: 0.5em;
     text-transform: uppercase;
+  }
+
+  @include bp.tablet {
+    p {
+      font-weight: 600;
+    }
   }
 }

@@ -1,9 +1,9 @@
 import './Projects.scss';
 
-import projectImages from '../data/projectImages';
 import ProjectRow from '../components/ProjectRow';
 
-import ProjectArr from '../data/projects';
+import projectImages from '../data/projectImages';
+import projects from '../data/projects';
 
 const Projects = () => {
   const categories = ['Frontend', 'Fullstack', 'Games & Visuals'];
@@ -18,17 +18,19 @@ const Projects = () => {
             <h2>{category}</h2>
 
             <div className="project-list">
-              {ProjectArr.filter((project) => project.category === category).map((project, i) => (
-                <ProjectRow
-                  key={project.slug}
-                  slug={project.slug}
-                  title={project.title}
-                  desc={project.desc}
-                  tags={project.tags}
-                  img={projectImages[project.img]}
-                  isMain={i === 0}
-                />
-              ))}
+              {projects
+                .filter((project) => project.category === category)
+                .map((project, i) => (
+                  <ProjectRow
+                    key={project.slug}
+                    slug={project.slug}
+                    title={project.title}
+                    desc={project.desc}
+                    tags={project.tags}
+                    img={projectImages[project.img]}
+                    isMain={i === 0}
+                  />
+                ))}
             </div>
           </div>
         ))}

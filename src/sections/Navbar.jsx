@@ -1,25 +1,27 @@
-import { Link } from 'react-router-dom';
-import SkratekLogo from '../../public/skratek.svg';
+import { NavLink } from 'react-router-dom';
+
 import './Navbar.scss';
+
+import SkratekLogo from '../../public/skratek.svg';
 
 const Navbar = () => {
   return (
     <nav>
       <div className="container header-inner">
-        <Link to="/">
+        <NavLink to="/">
           <div className="nav-left">
             <h3>Filip K</h3>
             <img src={SkratekLogo} alt="" />
           </div>
-        </Link>
+        </NavLink>
 
         <div className="nav-right">
-          <Link to="/about">
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'underlined' : '')}>
             <h3>About</h3>
-          </Link>
-          <Link to="/projects">
+          </NavLink>
+          <NavLink to="/projects" className={({ isActive }) => (isActive ? 'underlined' : '')}>
             <h3>Projects</h3>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </nav>

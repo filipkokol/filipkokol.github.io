@@ -1,20 +1,28 @@
+@use '../assets/styles/breakpoints' as bp;
+
 section#more-projects {
   background: #000;
   color: #fff;
-  overflow: hidden;
 
   .container {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+    overflow: hidden;
   }
 
   .project-row {
     display: flex;
     overflow-x: visible;
+    width: max-content;
+
+    position: relative;
 
     animation: polzek 30s linear infinite running;
     will-change: transform;
+
+    backface-visibility: hidden; // safari flickering fix
+    -webkit-backface-visibility: hidden; // safari flickering fix
 
     &:nth-of-type(2) {
       animation-direction: reverse;
@@ -32,10 +40,11 @@ section#more-projects {
 
   .more-text {
     font-weight: 800;
-    font-size: var(--text-2xl);
+    font-size: clamp(var(--text-2xl), 10vw, var(--text-3xl));
     margin: var(--space-4) 0;
     letter-spacing: -0.02em;
     line-height: 100%;
+    text-align: center;
   }
 
   mark {
@@ -43,6 +52,12 @@ section#more-projects {
 
     .highlight {
       scale: 1.1;
+    }
+  }
+
+  @include bp.mobile {
+    .project-thumb img {
+      height: clamp(5rem, 15vw, 12rem);
     }
   }
 }

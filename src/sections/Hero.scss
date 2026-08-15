@@ -15,39 +15,85 @@ section#hero {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    flex-grow: 1;
 
     margin: 0 auto;
-
-    @include bp.mobile {
-      max-width: 60%;
-    }
   }
 
   .hero-row {
-    padding: 0;
-    line-height: 0;
+    h1 {
+      line-height: 1.8;
+
+      white-space: nowrap;
+      margin: 0;
+
+      font-size: clamp(2rem, 6vw, 7rem);
+    }
 
     &.bordered {
-      border-top: 1px solid #00000055;
-      border-bottom: 1px solid #00000055;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background: #00000033;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background: #00000033;
+      }
 
       h1 {
-        white-space: nowrap;
-        position: relative;
+        line-height: 1;
+        font-size: clamp(var(--text-2xl), 8vw, 10rem);
       }
     }
   }
 
   mark {
     font-weight: 900;
+
+    .highlight {
+      scale: 1.3;
+    }
   }
 
   .align-left {
     text-align: left;
+    margin-left: 20vw;
+    padding-left: 10vw;
+    transform: rotate(1deg);
+
+    &::after {
+      transform: translateX(5vw);
+    }
   }
 
   .align-right {
     text-align: right;
+    margin-right: 15vw;
+  }
+
+  .align-center {
+    text-align: center;
+
+    margin-right: 20vw;
+    padding-right: 0vw;
+    transform: rotate(-1deg);
+
+    &::after {
+      transform: translateX(-5vw);
+    }
   }
 
   .scroll-hint {
@@ -62,6 +108,8 @@ section#hero {
     font-weight: 900;
     opacity: 0.3;
 
+    animation: scrollWheel 2.5s infinite cubic-bezier(0.29, 0.72, 0.44, 1);
+
     span {
       display: flex;
       justify-content: center;
@@ -72,6 +120,22 @@ section#hero {
 
     img {
       height: 0.7em;
+      opacity: 0.8;
     }
+  }
+}
+
+@keyframes scrollWheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    // top: 30px;
+    transform: translateY(0%);
   }
 }

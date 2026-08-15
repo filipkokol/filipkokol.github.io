@@ -11,6 +11,11 @@ const Footer = () => {
             <h1>Filip K</h1>
             <img src={SkratekLogo} alt="" />
           </div>
+
+          <div className="game-of-life">
+            <img src={LifeGif} alt="" />
+          </div>
+
           <div className="social-links">
             <a href="#">LinkedIn</a>
             <a href="https://github.com/vodnibivol">Github</a>
@@ -24,9 +29,6 @@ const Footer = () => {
             <a href="tel:+38651608707">(+386)51608707</a>
           </div>
         </div>
-      </div>
-      <div className="game-of-life">
-        <img src={LifeGif} alt="" />
       </div>
     </section>
   );

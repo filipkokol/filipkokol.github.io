@@ -16,11 +16,11 @@ const AboutShort = () => {
             <strong>passion</strong> for creating smooth and beautiful user experiences.
           </p>
         </div>
-      </div>
 
-      <div className="scroll-hint">
-        <span>See my projects</span>
-        <img src={ArrowIcon} alt="" />
+        <div className="scroll-hint">
+          <span>See my projects</span>
+          <img src={ArrowIcon} alt="" />
+        </div>
       </div>
     </section>
   );
