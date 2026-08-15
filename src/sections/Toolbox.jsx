@@ -6,8 +6,6 @@ const Toolbox = () => {
   const imageModules = import.meta.glob('../../public/svg-logos/*.svg', { eager: true });
   const imagesArray = Object.values(imageModules).map((mod) => mod.default);
 
-  // TODO: moram nardit custom seznam, ker je kar random in zaradi errorjev
-
   return (
     <section id="toolbox">
       <div className="container">

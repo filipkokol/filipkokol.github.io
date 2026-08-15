@@ -14,6 +14,7 @@ const projects = [
     desc: 'A react website based on a dribble design.',
     category: 'Frontend',
     img: 'windex.png',
+    tags: ['React', 'case-study'],
     color: '#D9EAD3',
   },
   {
@@ -22,6 +23,7 @@ const projects = [
     desc: 'World flags learning tool.',
     category: 'Frontend',
     img: 'zastavice.png',
+    tags: [],
     color: '#D0DFE3',
   },
   {
@@ -30,6 +32,7 @@ const projects = [
     desc: 'Slovenian version of the famous Wordle game.',
     category: 'Frontend',
     img: 'besedle.png',
+    tags: ['Python', 'CSS Animations'],
     color: '#D9EAD3',
   },
   {
@@ -38,12 +41,14 @@ const projects = [
     desc: 'Realtime weather given in morse code.',
     category: 'Frontend',
     img: 'vreme.png',
+    tags: ['Web Audio API'],
     color: '#D0E2F3',
   },
   {
     slug: 'knjizarna',
     title: 'Knjižarna',
     desc: 'A shared file library made for distributing college class material. Designed by me, implemented in NodeJS with MongoDB database.',
+    desc_short: 'A text library I made for sharing lesson material in my school',
     desc_long: [
       'The idea behind Knjižarna was to make a shared library of internal resources for the college. During Covid-19 they all became digitized for the purpose of easier student access, bit it was messy and disorganized and every student had to gather all the resources on their own.',
       'I created everything inside NodeJS, with server-side rendering using EJS. For uploading or editing of the document "wiki", registering an account is required, which is done by sending a token via email. Then, the pdf files can be uploaded to the server, stored inside a NeDB (MongoDB subset) database. Image processing is done by graphicsmagick.',
@@ -60,9 +65,11 @@ const projects = [
   {
     slug: 'busbus',
     title: 'Busbus',
-    desc: "Ljubljana's bus tracker and driver rating app.",
+    // desc_short: "Ljubljana's bus tracker and driver rating app.",
+    desc: "Ljubljana's bus reealtime arrival search and vehicle tracker with an ability to rate drivers",
     category: 'Fullstack',
     img: 'busbus.png',
+    tags: ['NodeJS', 'MongoDB', 'Leaflet', 'API', 'public transit data'],
     color: '#D0DFE3',
   },
   {
@@ -80,15 +87,17 @@ const projects = [
     desc: 'A web socket online multiplayer game.',
     category: 'Fullstack',
     img: 'tictactoe.png',
+    tags: ['WebSocket', 'NodeJS', 'Express'],
     color: '#fff', // TODO
   },
   {
     slug: 'skratek',
     title: 'Škratek',
     desc: 'A minimalistic web game writen in javascript and powered by p5.js graphics library. Inspired by the oldschool mobile game "doodle jump", reimagined for the web.',
+    desc_short: 'A minimalistic web game inspired by "doodle jump"',
     category: 'Games & Visuals',
     img: 'skratek.png',
-    tags: ['p5.js', 'javascript'],
+    tags: ['p5.js', 'javascript', 'design'],
     color: '#C9DAF8',
   },
   {
@@ -97,6 +106,7 @@ const projects = [
     desc: 'Tetris-like browser game.',
     category: 'Games & Visuals',
     img: 'zlozek.png',
+    tags: ['p5.js', 'javascript', 'procedural'],
     color: '#D0DFE3',
   },
   {
@@ -105,6 +115,7 @@ const projects = [
     desc: 'A sinusoidal line travelling in space, avoiding objects.',
     category: 'Games & Visuals',
     img: 'crtica.png',
+    tags: ['p5.js', 'javascript'],
     color: '#FCE5CD',
   },
   {
@@ -113,6 +124,7 @@ const projects = [
     desc: 'Auto-generated crossword puzzle game from a given topic.',
     category: 'Games & Visuals',
     img: 'krizemka.png',
+    tags: ['Python', 'p5.js', 'javascript'],
     color: '#fff', // TODO
   },
   {
@@ -121,6 +133,7 @@ const projects = [
     desc: 'Linear cellular automata.',
     category: 'Games & Visuals',
     img: 'wolfram.png',
+    tags: ['cellular automata', 'p5.js'],
     color: '#fff', // TODO
   },
 ];

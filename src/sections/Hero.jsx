@@ -1,5 +1,7 @@
 import './Hero.scss';
 
+import HeroCanvas from '../components/HeroCanvas';
+
 import ScrollArrow from '../../public/scroll-triangle.svg';
 import Rect1 from '../../public/rect1.svg';
 import Rect2 from '../../public/rect2.svg';
@@ -7,7 +9,8 @@ import Rect2 from '../../public/rect2.svg';
 const Hero = () => {
   return (
     <section id="hero">
-      {/* <div className="container"> */}
+      <HeroCanvas />
+
       <div className="hero-text">
         <div className="hero-row bordered align-left">
           <h1>

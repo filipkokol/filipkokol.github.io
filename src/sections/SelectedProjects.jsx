@@ -1,54 +1,14 @@
-import './SelectedProjects.scss';
+import { Link } from 'react-router-dom';
 
-import PapertigerImg from '../assets/img/thumbs/papertiger.png';
-import BusbusImg from '../assets/img/thumbs/busbus.png';
-import SkratekImg from '../assets/img/thumbs/skratek.png';
-import KnjizarnaImg from '../assets/img/thumbs/knjizarna.png';
-// import TelovadbaImg from '../assets/img/thumbs/windex.png';
-// import ZlozekImg from '../assets/img/thumbs/zlozek.png';
+import projects from '../data/projects';
+import images from '../data/projectImages';
+
+import './SelectedProjects.scss';
 
 import ProjectCard from '../components/ProjectCard';
 
 const SelectedProjects = () => {
-  const projects = [
-    {
-      title: 'Paper Tiger',
-      desc: 'A study in GSAP web animations based on an award-winning website',
-      tags: ['GSAP', 'case study'],
-      img: PapertigerImg,
-    },
-    {
-      title: 'Busbus',
-      desc: "Ljubljana's bus arrival search and vehicle tracker with an ability to rate drivers",
-      tags: ['Vue.js', 'NodeJS', 'MongoDB'],
-      img: BusbusImg,
-    },
-    {
-      title: 'Škratek',
-      desc: 'A minimalistic web game inspired by "doodle jump"',
-      tags: ['javascript', 'p5.js'],
-      img: SkratekImg,
-    },
-    {
-      title: 'Knjižarna',
-      desc: 'A text library I made for sharing lesson material in my school',
-      tags: ['NodeJS', 'MongoDB', 'Raspberry Pi'],
-      img: KnjizarnaImg,
-    },
-    // {
-    //   title: 'Telovadba',
-    //   desc: 'A workout planning and training timing app',
-    //   tags: ['Vue.js'],
-    //   img: TelovadbaImg,
-    // },
-    // {
-    //   title: 'Zložek',
-    //   desc: 'Tetris-like browser game.',
-    //   tags: ['p5.js', 'javascript'],
-    //   img: ZlozekImg,
-    // },
-    // TODO: 6 jih najdi in zadnja dva skrij v CSS
-  ];
+  const selectedProjects = ['paper-tiger', 'busbus', 'skratek', 'knjizarna'];
 
   return (
     <section id="selected-projects">
@@ -56,9 +16,16 @@ const SelectedProjects = () => {
         <h1>Selected projects</h1>
 
         <div className="carousel">
-          {projects.map((proj) => (
-            <ProjectCard {...proj} key={proj.title} />
-          ))}
+          {selectedProjects.map((slug) => {
+            const data = projects.find((p) => p.slug === slug);
+            console.log(data);
+
+            return (
+              <Link to={`/project/${data.slug}`}>
+                <ProjectCard {...data} img={images[data.img]} key={slug} />
+              </Link>
+            );
+          })}
         </div>
 
         <p className="projects-text">
