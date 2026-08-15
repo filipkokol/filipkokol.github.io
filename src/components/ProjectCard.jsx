@@ -3,7 +3,7 @@ import Tags from './Tags';
 const ProjectCard = (proj) => {
   return (
     <div className="project-card">
-      <div className="img-container">
+      <div className="img-container" style={{ backgroundColor: proj.color }}>
         <img src={proj.img} alt="" />
       </div>
       <div className="details">

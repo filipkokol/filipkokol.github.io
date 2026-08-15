@@ -54,6 +54,7 @@ section#projects {
     .project-image {
       width: 5rem;
       flex-shrink: 0;
+      align-self: flex-start;
     }
 
     p {
@@ -111,6 +112,10 @@ section#projects {
         .project-image {
           max-width: 15rem;
         }
+      }
+
+      .project-image {
+        align-self: center;
       }
     }
   }

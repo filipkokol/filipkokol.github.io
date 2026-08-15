@@ -22,7 +22,7 @@ const ProjectDetails = () => {
         {project.tags && <Tags tagArr={project.tags} />}
 
         <div className="cover-image" style={{ backgroundColor: project.color }}>
-          <img src={images[project.img]} alt="" />
+          <img src={images[project.slug + '.png']} alt="" />
         </div>
 
         <div className="text-container">

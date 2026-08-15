@@ -18,7 +18,10 @@ section#more-projects {
 
     position: relative;
 
-    animation: polzek 30s linear infinite running;
+    isolation: isolate; // gives this its own stacking/compositing context explicitly
+    contain: layout paint; // tells Safari this subtree's painting is self-contained, limiting repaint scope
+
+    // animation: polzek 30s linear infinite running;
     will-change: transform;
 
     backface-visibility: hidden; // safari flickering fix
@@ -32,9 +35,10 @@ section#more-projects {
   .project-thumb {
     margin-right: 0.9rem;
     flex-shrink: 0;
+    padding: var(--space-2) var(--space-4);
 
     img {
-      height: 5rem;
+      height: 4rem;
     }
   }
 
@@ -57,7 +61,7 @@ section#more-projects {
 
   @include bp.mobile {
     .project-thumb img {
-      height: clamp(5rem, 15vw, 12rem);
+      height: clamp(5rem, 15vw, 10rem);
     }
   }
 }

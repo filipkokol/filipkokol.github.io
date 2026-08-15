@@ -1,17 +1,8 @@
-import { useEffect, useRef } from 'react';
-import p5 from 'p5';
+// another sketch, same hook, optionally starting a bit early
+import { useP5 } from '../assets/hooks/useP5';
 import createSketch from '../assets/sketches/mravlja/sketch';
 
 export default function HeroCanvas() {
-  const containerRef = useRef();
-
-  useEffect(() => {
-    const instance = new p5(createSketch(containerRef.current), containerRef.current);
-
-    return () => {
-      instance.remove();
-    };
-  }, []);
-
+  const containerRef = useP5(createSketch, { rootMargin: '200px' });
   return <div ref={containerRef} className="hero-canvas" />;
 }

@@ -8,7 +8,7 @@ import './SelectedProjects.scss';
 import ProjectCard from '../components/ProjectCard';
 
 const SelectedProjects = () => {
-  const selectedProjects = ['paper-tiger', 'busbus', 'skratek', 'knjizarna'];
+  const selectedProjects = ['paper-tiger', 'busbus', 'jumping-dwarf', 'knjizarna'];
 
   return (
     <section id="selected-projects">
@@ -18,11 +18,10 @@ const SelectedProjects = () => {
         <div className="carousel">
           {selectedProjects.map((slug) => {
             const data = projects.find((p) => p.slug === slug);
-            console.log(data);
 
             return (
-              <Link to={`/project/${data.slug}`}>
-                <ProjectCard {...data} img={images[data.img]} key={slug} />
+              <Link to={`/project/${data.slug}`} key={slug}>
+                <ProjectCard {...data} img={images[data.img]} />
               </Link>
             );
           })}

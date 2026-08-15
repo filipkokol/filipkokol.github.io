@@ -1,19 +1,17 @@
 import './Footer.scss';
 import SkratekLogo from '../../public/skratek.svg';
-import LifeGif from '../assets/img/life.gif';
+import FooterCanvas from '../components/FooterCanvas';
 
 const Footer = () => {
   return (
     <section id="footer">
+      <FooterCanvas />
+
       <div className="container">
         <div className="footer-top">
           <div className="logo">
             <h1>Filip K</h1>
             <img src={SkratekLogo} alt="" />
-          </div>
-
-          <div className="game-of-life">
-            <img src={LifeGif} alt="" />
           </div>
 
           <div className="social-links">

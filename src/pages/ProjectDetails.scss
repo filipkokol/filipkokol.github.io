@@ -21,10 +21,11 @@ section#project-details {
   }
 
   .cover-image {
-    background-color: lightblue;
+    background-color: #d0e2f3;
+    padding: var(--space-6);
 
     img {
-      max-height: 35rem;
+      max-height: 30rem;
       width: 100%;
       object-fit: contain;
     }
