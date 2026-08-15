@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <rect id="Artboard1" x="0" y="0" width="512" height="512" style="fill:none;"/>
-    <g id="Artboard11" serif:id="Artboard1">
-        <rect x="0" y="0" width="512" height="512" style="fill:white;"/>
-        <g transform="matrix(2.786731,0,0,2.790078,-403.72658,-499.896368)">
-            <rect x="227" y="273" width="61.24" height="61.24" style="fill:rgb(117,93,242);"/>
-        </g>
-        <g transform="matrix(50.690956,0,0,50.690956,-10507.769271,-11186.221804)">
-            <path d="M210.134,224.544L210.134,225.24L209.597,225.24L209.597,225.84L210.134,225.84L210.134,227.854C210.134,228.262 209.917,228.538 209.597,228.538L209.597,229.21L212.37,229.21L212.37,228.538C212.051,228.538 211.833,228.262 211.833,227.854L211.833,225.84L213.547,225.84L213.547,225.24L211.833,225.24C211.354,225.18 211.035,224.976 211.035,224.508C211.035,223.716 211.412,223.152 211.877,223.152C212.702,223.152 212.063,224.7 212.063,224.7L214.202,224.682C214.379,222.78 213.663,222.24 212.429,222.24C211.122,222.24 210.134,223.164 210.134,224.544Z" style="fill-rule:nonzero;"/>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 512 512"><path id="Artboard1" d="M0 0H512V512H0z" style="fill:none"/><g id="Artboard11"><path d="M0 0H512V512H0z" style="fill:#fff"/><path d="M227 273H288.24V334.24H227z" style="fill:#755df2" transform="matrix(2.78673 0 0 2.79008 -403.727 -499.896)"/><path d="M210.134,224.544L210.134,225.24L209.597,225.24L209.597,225.84L210.134,225.84L210.134,227.854C210.134,228.262 209.917,228.538 209.597,228.538L209.597,229.21L212.37,229.21L212.37,228.538C212.051,228.538 211.833,228.262 211.833,227.854L211.833,225.84L213.547,225.84L213.547,225.24L211.833,225.24C211.354,225.18 211.035,224.976 211.035,224.508C211.035,223.716 211.412,223.152 211.877,223.152C212.702,223.152 212.063,224.7 212.063,224.7L214.202,224.682C214.379,222.78 213.663,222.24 212.429,222.24C211.122,222.24 210.134,223.164 210.134,224.544Z" style="fill-rule:nonzero" transform="translate(-10507.77 -11186.222)scale(50.69096)"/></g></svg>
