@@ -17,10 +17,10 @@ const Navbar = () => {
 
         <div className="nav-right">
           <NavLink to="/about" className={({ isActive }) => (isActive ? 'underlined' : '')}>
-            <h3>About</h3>
+            <h3 className="underlined-hover">About</h3>
           </NavLink>
           <NavLink to="/projects" className={({ isActive }) => (isActive ? 'underlined' : '')}>
-            <h3>Projects</h3>
+            <h3 className="underlined-hover">Projects</h3>
           </NavLink>
         </div>
       </div>

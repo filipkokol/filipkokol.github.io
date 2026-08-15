@@ -17,16 +17,24 @@ const Footer = () => {
           </div>
 
           <div className="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="https://github.com/vodnibivol">Github</a>
+            <a className="underlined-hover" href="#">
+              LinkedIn
+            </a>
+            <a className="underlined-hover" href="https://github.com/vodnibivol">
+              Github
+            </a>
           </div>
         </div>
 
         <div className="footer-bottom">
           <div className="copyright">© 2026</div>
           <div className="contact-links">
-            <a href="mailto:filipkokol@icloud.com">filipkokol@icloud.com</a>
-            <a href="tel:+38651608707">(+386)51608707</a>
+            <a className="underlined-hover" href="mailto:filipkokol@icloud.com">
+              filipkokol@icloud.com
+            </a>
+            <a className="underlined-hover" href="tel:+38651608707">
+              (+386)51608707
+            </a>
           </div>
         </div>
       </div>
