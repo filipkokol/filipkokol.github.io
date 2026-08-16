@@ -5,8 +5,10 @@ export default function createSketch(container) {
     const MARGIN = 0;
 
     let COLS, ROWS;
-    let grid, nextGrid; // Uint8Array, ping-ponged
-    let im1, ip1, jm1, jp1; // precomputed wrap-around index tables
+    let grid, nextGrid;
+    let im1, ip1, jm1, jp1;
+    let canvasBuffer; // persistent RGB buffer we manually alpha-blend into
+    let pw, ph; // pixel-density-adjusted canvas dimensions
 
     const computeGridSize = () => {
       const { offsetWidth, offsetHeight } = container;
@@ -39,6 +41,14 @@ export default function createSketch(container) {
       nextGrid = new Uint8Array(COLS * ROWS);
     };
 
+    const allocPixelBuffer = () => {
+      const d = p.pixelDensity();
+      pw = p.width * d;
+      ph = p.height * d;
+      // start black, same as an un-cleared canvas would effectively converge to
+      canvasBuffer = new Uint8ClampedArray(pw * ph * 3);
+    };
+
     const idx = (i, j) => i * ROWS + j;
 
     const randomizeGrid = () => {
@@ -46,6 +56,7 @@ export default function createSketch(container) {
     };
 
     p.setup = () => {
+      p.pixelDensity(1); // keep 1:1, matches perf win from step 1
       p.noSmooth();
       computeGridSize();
       const { W, H } = canvasDimensions();
@@ -54,10 +65,19 @@ export default function createSketch(container) {
       buildIndexTables();
       allocGrids();
       randomizeGrid();
+      allocPixelBuffer();
     };
 
+    let prevScrollY = 0;
     p.draw = () => {
-      p.noStroke();
+      if (Math.abs(window.scrollY - prevScrollY) > 5) {
+        prevScrollY = window.scrollY;
+        return;
+      }
+
+      p.loadPixels();
+      const d = p.pixelDensity();
+      const cs = Math.floor(CELL_SIZE * d);
 
       for (let i = 0; i < COLS; i++) {
         const iL = im1[i],
@@ -66,7 +86,6 @@ export default function createSketch(container) {
           const jU = jm1[j],
             jD = jp1[j];
 
-          // 8 direct lookups, no inner loop, no modulo in the hot path
           const count =
             grid[idx(iL, jU)] +
             grid[idx(i, jU)] +
@@ -80,19 +99,42 @@ export default function createSketch(container) {
           const cur = grid[idx(i, j)];
           const amount = cur * count;
 
-          p.fill(amount * 60, amount * 60, amount * 60, 10 + cur * 64);
-          p.rect(
-            MARGIN + i * (CELL_SIZE + BORDER_WIDTH),
-            MARGIN + j * (CELL_SIZE + BORDER_WIDTH),
-            CELL_SIZE,
-            CELL_SIZE,
-          );
+          const target = amount * 60;
+          const a = (10 + cur * 64) / 255;
+
+          const px = Math.floor((MARGIN + i * (CELL_SIZE + BORDER_WIDTH)) * d);
+          const py = Math.floor((MARGIN + j * (CELL_SIZE + BORDER_WIDTH)) * d);
+
+          // sample ONE pixel from the buffer to compute the blend once for the whole cell
+          const sampleBufPos = (py * pw + px) * 3;
+          const r = canvasBuffer[sampleBufPos] * (1 - a) + target * a;
+          const g = canvasBuffer[sampleBufPos + 1] * (1 - a) + target * a;
+          const b = canvasBuffer[sampleBufPos + 2] * (1 - a) + target * a;
+
+          // build small row templates once per cell, then blit rows with .set() (native, fast)
+          const rgbRow = new Uint8ClampedArray(cs * 3);
+          const rgbaRow = new Uint8ClampedArray(cs * 4);
+          for (let x = 0; x < cs; x++) {
+            rgbRow[x * 3] = r;
+            rgbRow[x * 3 + 1] = g;
+            rgbRow[x * 3 + 2] = b;
+            rgbaRow[x * 4] = r;
+            rgbaRow[x * 4 + 1] = g;
+            rgbaRow[x * 4 + 2] = b;
+            rgbaRow[x * 4 + 3] = 255;
+          }
+
+          for (let y = 0; y < cs; y++) {
+            const rowY = py + y;
+            canvasBuffer.set(rgbRow, (rowY * pw + px) * 3);
+            p.pixels.set(rgbaRow, (rowY * pw + px) * 4);
+          }
 
           nextGrid[idx(i, j)] = count === 3 ? 1 : count < 2 || count > 3 ? 0 : cur;
         }
       }
+      p.updatePixels();
 
-      // swap buffers instead of reallocating
       const tmp = grid;
       grid = nextGrid;
       nextGrid = tmp;
@@ -105,6 +147,7 @@ export default function createSketch(container) {
       buildIndexTables();
       allocGrids();
       randomizeGrid();
+      allocPixelBuffer(); // buffer size changed, reset trails
     };
   };
 }

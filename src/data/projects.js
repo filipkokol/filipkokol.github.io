@@ -7,11 +7,17 @@ const projects = [
     category: 'Frontend',
     img: 'paper-tiger.png',
     color: '#D9D2E9',
+    link_outer: 'https://www.vodnibivol.org/papertiger-study/',
   },
   {
     slug: 'portfolio',
     title: 'Portfolio',
     desc: 'This portfolio! Made in React, with GSAP animations',
+    desc_long: [
+      "Is it too meta to have a portfolio website listed as a project on your own portfolio? I sure hope not! This one was one of the most fun projects I've worked on.",
+      // responsive design
+      //
+    ],
     tags: ['React', 'GSAP'],
     category: 'Frontend',
     img: '',
@@ -25,6 +31,7 @@ const projects = [
     img: 'windex.png',
     tags: ['React', 'case-study'],
     color: '#D9EAD3',
+    link_outer: 'https://www.vodnibivol.org/windex-study-react/',
   },
   {
     slug: 'world-flags',
@@ -34,6 +41,7 @@ const projects = [
     img: 'zastavice.png',
     tags: [],
     color: '#D0DFE3',
+    link_outer: 'https://www.vodnibivol.org/zastavice/',
   },
   {
     slug: 'besedle',
@@ -41,8 +49,9 @@ const projects = [
     desc: 'Slovenian version of the famous Wordle game.',
     category: 'Frontend',
     img: 'besedle.png',
-    tags: ['Vue.js', 'Python', 'CSS Animations'],
+    tags: ['Vue.js', 'PWA', 'Python', 'CSS Animations'],
     color: '#D9EAD3',
+    link_outer: 'https://www.vodnibivol.org/besedle/',
   },
   {
     slug: 'morse-weather',
@@ -52,6 +61,7 @@ const projects = [
     img: 'vreme.png',
     tags: ['Web Audio API'],
     color: '#D0E2F3',
+    link_outer: 'https://www.vodnibivol.org/vremenska_napoved/',
   },
   {
     slug: 'knjizarna',
@@ -60,11 +70,11 @@ const projects = [
     desc_short: 'A text library I made for sharing lesson material in my school',
     desc_long: [
       'The idea behind Knjižarna was to make a shared library of internal resources for the college. During Covid-19 they all became digitized for the purpose of easier student access, bit it was messy and disorganized and every student had to gather all the resources on their own.',
-      'I created everything inside NodeJS, with server-side rendering using EJS. For uploading or editing of the document "wiki", registering an account is required, which is done by sending a token via email. Then, the pdf files can be uploaded to the server, stored inside a NeDB (MongoDB subset) database. Image processing is done by graphicsmagick.',
+      'I created everything inside NodeJS, with server-side rendering using EJS. For uploading or editing of the document "wiki", registering an account is required, which is done by sending a token via email. Then, the PDF files can be uploaded to the server, stored inside a NeDB (MongoDB-like) database. Image processing is done by graphicsmagick.',
       'Additionally, there is in-built support to autocomplete book or article metadata via the Slovenian national library information system COBISS. Resources can be filtered in search by a regex filter.',
       'The design was inspired by early 2000 era website aesthetic, with lovely in-built HTML element styles, styled urls links and themed after the medieval schola.',
     ],
-    link_outer: 'https://strojcek.ftp.sh/knjizarna',
+    link_outer: 'https://strojcek.ftp.sh/knjizarna/',
     category: 'Fullstack',
     img: 'knjizarna.png',
     img_extras: ['knjizarna-2.png', 'knjizarna-3.png'],
@@ -80,6 +90,7 @@ const projects = [
     img: 'busbus.png',
     tags: ['NodeJS', 'MongoDB', 'Leaflet', 'API', 'public transit data'],
     color: '#D0DFE3',
+    link_outer: 'https://strojcek.ftp.sh/busbus/',
   },
   {
     slug: 'workouts',
@@ -89,6 +100,7 @@ const projects = [
     img: '',
     tags: ['Vue.js', 'design'],
     color: '#D9D2E9',
+    link_outer: 'https://www.vodnibivol.org/telovadba/',
   },
   {
     slug: 'tic-tac-toe',
@@ -97,7 +109,8 @@ const projects = [
     category: 'Fullstack',
     img: 'tictactoe.png',
     tags: ['WebSocket', 'NodeJS', 'Express'],
-    color: '#CCF0FF', // TODO
+    color: '#CCF0FF',
+    link_outer: 'https://strojcek.ftp.sh/tictactoe/',
   },
   {
     slug: 'jumping-dwarf',
@@ -108,6 +121,7 @@ const projects = [
     img: 'jumping-dwarf.png',
     tags: ['p5.js', 'javascript', 'design'],
     color: '#C9DAF8',
+    link_outer: 'https://lulekfun.github.io/skratek/',
   },
   {
     slug: 'zlozek',
@@ -117,6 +131,7 @@ const projects = [
     img: 'zlozek.png',
     tags: ['p5.js', 'javascript', 'procedural'],
     color: '#D0DFE3',
+    link_outer: 'https://www.vodnibivol.org/zlozek/',
   },
   {
     slug: 'sine-line',
@@ -126,6 +141,7 @@ const projects = [
     img: 'crtica.png',
     tags: ['p5.js', 'javascript'],
     color: '#FCE5CD',
+    link_outer: 'https://lulekfun.github.io/crtica/',
   },
   {
     slug: 'krizemka',
@@ -135,6 +151,7 @@ const projects = [
     img: 'krizemka.png',
     tags: ['Python', 'p5.js', 'javascript'],
     color: '#edcbf0',
+    link_outer: 'https://www.vodnibivol.org/krizemka/',
   },
   {
     slug: 'ants',
@@ -144,6 +161,7 @@ const projects = [
     img: '',
     tags: ['p5.js', 'agents'],
     color: '#cbd7f0',
+    link_outer: 'https://www.vodnibivol.org/mravlja/',
   },
   {
     slug: 'wolfram',
@@ -153,6 +171,7 @@ const projects = [
     img: 'wolfram.png',
     tags: ['cellular automata', 'p5.js'],
     color: '#f0efcb',
+    link_outer: 'https://www.vodnibivol.org/larica/wolfram',
   },
   {
     slug: 'to-do',
@@ -162,6 +181,7 @@ const projects = [
     img: 'to-do.png',
     tags: ['React', 'dribbble'],
     color: '#D9D2E9',
+    link_outer: 'https://www.vodnibivol.org/react-todo/',
   },
   {
     slug: 'snake',
@@ -171,6 +191,7 @@ const projects = [
     img: '',
     tags: ['p5.js', 'javascript'],
     color: '#CBCCF0',
+    link_outer: 'https://lulekfun.github.io/kacica/',
   },
   {
     slug: 'word-learn',
@@ -180,6 +201,7 @@ const projects = [
     img: '',
     tags: ['Vue.js'],
     color: '#FFF3CC',
+    link_outer: 'https://www.vodnibivol.org/ucenje/',
   },
   {
     slug: 'word-picnic',
@@ -189,6 +211,7 @@ const projects = [
     img: '',
     tags: ['Alpine.js', 'Python'],
     color: '#FFF3CC',
+    link_outer: 'https://www.vodnibivol.org/piknik/',
   },
   {
     slug: 'paint',
@@ -198,6 +221,7 @@ const projects = [
     img: '',
     tags: ['Canvas API', 'Alpine.js'],
     color: '#FFF3CC',
+    link_outer: 'https://www.vodnibivol.org/slikar/',
   },
   {
     slug: 'morse-translator',
@@ -207,6 +231,7 @@ const projects = [
     img: '',
     tags: [],
     color: '#D9EAD3',
+    link_outer: 'https://www.vodnibivol.org/morse/',
   },
   {
     slug: 'space-shooter',
@@ -216,6 +241,7 @@ const projects = [
     img: '',
     tags: ['p5.js', 'drawing'],
     color: '#cbf0cc',
+    link_outer: 'https://lulekfun.github.io/vesoljcki/',
   },
   {
     slug: 'word-of-the-day',
@@ -225,6 +251,7 @@ const projects = [
     img: '',
     tags: ['Python'],
     color: '#D3E0EA',
+    link_outer: 'https://www.vodnibivol.org/beseda_dneva/',
   },
   {
     slug: 'hangman',
@@ -235,6 +262,7 @@ const projects = [
     img_extras: ['hangman-2.png', 'hangman-3.png', 'hangman-4.png'],
     tags: ['Python', 'jacasript'],
     color: '#cbf0cf',
+    link_outer: 'https://www.vodnibivol.org/vislice/',
   },
   {
     slug: 'dot-matrix-display',
@@ -243,7 +271,8 @@ const projects = [
     category: 'Games & Visuals',
     img: '',
     tags: ['p5.js'],
-    color: '#f0cbcb', // TODO
+    color: '#f0cbcb',
+    link_outer: 'https://www.vodnibivol.org/ekrancek/',
   },
   {
     slug: 'memory-square',
@@ -253,6 +282,7 @@ const projects = [
     img: '',
     tags: [],
     color: '#f0edcb',
+    link_outer: 'https://www.vodnibivol.org/spomin_kvadrat/',
   },
   {
     slug: 'ff-news',
@@ -262,6 +292,7 @@ const projects = [
     img: '',
     tags: ['Python', 'Web Scraping', 'email', 'MongoDB', 'Raspberry Pi'],
     color: '#FFCCCC',
+    link_outer: 'https://strojcek.ftp.sh/ff/',
   },
 ];
 

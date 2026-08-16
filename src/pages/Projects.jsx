@@ -1,9 +1,10 @@
+import ProjectList from '../components/ProjectList';
+
 import './Projects.scss';
 
-import ProjectRow from '../components/ProjectRow';
-
-import projectImages from '../data/projectImages';
 import projects from '../data/projects';
+import WipeDiv from '../components/WipeDiv';
+import ScrollFloatDiv from '../components/ScrollFloatDiv';
 
 const Projects = () => {
   const categories = ['Fullstack', 'Frontend', 'Games & Visuals'];
@@ -11,19 +12,17 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="container">
-        <h1>Projects</h1>
+        <WipeDiv>
+          <h1>Projects</h1>
+        </WipeDiv>
 
         {categories.map((category) => (
           <div className="category" key={category}>
-            <h2>{category}</h2>
+            <ScrollFloatDiv>
+              <h2>{category}</h2>
+            </ScrollFloatDiv>
 
-            <div className="project-list">
-              {projects
-                .filter((project) => project.category === category)
-                .map((project, i) => (
-                  <ProjectRow {...project} img={projectImages[project.slug + '.png']} isMain={i === 0} />
-                ))}
-            </div>
+            <ProjectList projects={projects.filter((project) => project.category === category)} />
           </div>
         ))}
       </div>

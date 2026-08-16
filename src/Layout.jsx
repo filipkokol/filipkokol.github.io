@@ -2,8 +2,11 @@ import { Outlet } from 'react-router-dom';
 
 import Navbar from './sections/Navbar';
 import Footer from './sections/Footer';
+import useLenis from './assets/hooks/useLenis';
 
-function App() {
+function Layout() {
+  useLenis();
+
   return (
     <div className="App">
       <Navbar />
@@ -13,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Layout;

@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 import './Toolbox.scss';
 
 import highlight from '../../public/rect4.svg';
@@ -13,11 +15,19 @@ const Toolbox = () => {
           My{' '}
           <mark>
             <span>Toolbox</span>
-            <img className="highlight" src={highlight} alt="" />
+            <motion.img
+              className="highlight"
+              src={highlight}
+              alt=""
+              initial={{ clipPath: 'inset(0 0 0 100%)' }}
+              whileInView={{ clipPath: 'inset(0 0 0 0)' }}
+              viewport={{ once: false, margin: '-20%' }}
+              transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0 }}
+            />
           </mark>
         </h1>
 
-        <span className="subtitle">Tech I've used in the past</span>
+        <span className="subtitle upper">Tech I've used in the past</span>
         <div className="tools-grid">
           {imagesArray.map((img, i) => (
             <div className="tools-grid-cell" key={i}>

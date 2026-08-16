@@ -14,10 +14,25 @@ section#project-details {
   }
 
   h2 {
-    text-transform: uppercase;
-    font-family: var(--sans);
     font-size: clamp(var(--text-sm), 2vw, var(--text-lg));
     font-weight: 900;
+  }
+
+  h3 {
+    // error msg
+    font-weight: 700;
+  }
+
+  .underlined {
+    align-self: flex-start;
+  }
+
+  p {
+    letter-spacing: -0.03em;
+    line-height: 170%;
+
+    font-size: var(--text-lg);
+    font-weight: 450;
   }
 
   .cover-image {
@@ -43,16 +58,7 @@ section#project-details {
     flex-direction: column;
     gap: var(--space-5);
 
-    font-size: var(--text-lg);
-    font-weight: 450;
-    // color: #444;
-
     max-width: 45rem;
-
-    p {
-      letter-spacing: -0.03em;
-      line-height: 170%;
-    }
   }
 
   a.link-wrapper {

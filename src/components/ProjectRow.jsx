@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import Tags from './Tags';
 
-const ProjectRow = ({ slug, title, desc, tags, img, color, isMain = false }) => {
+const ProjectRow = ({ slug, title, desc, tags, img, color }) => {
   return (
-    <div className={'project-row ' + (isMain ? 'main' : '')}>
+    <>
       <div className="text">
         <Link to={'/project/' + slug}>
           <h3 className="project-title">{title}</h3>
@@ -17,7 +17,7 @@ const ProjectRow = ({ slug, title, desc, tags, img, color, isMain = false }) => 
       <Link to={'/project/' + slug} className="project-image" style={{ backgroundColor: color || 'red' }}>
         <img src={img} alt="" />
       </Link>
-    </div>
+    </>
   );
 };
 

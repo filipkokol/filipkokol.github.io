@@ -18,10 +18,9 @@ section#more-projects {
 
     position: relative;
 
-    isolation: isolate; // gives this its own stacking/compositing context explicitly
-    contain: layout paint; // tells Safari this subtree's painting is self-contained, limiting repaint scope
+    isolation: isolate;
+    contain: layout paint;
 
-    // animation: polzek 30s linear infinite running;
     will-change: transform;
 
     backface-visibility: hidden; // safari flickering fix
@@ -39,6 +38,13 @@ section#more-projects {
 
     img {
       height: 4rem;
+      transition: transform 0.2s;
+    }
+
+    @media screen and (hover: hover) {
+      &:hover img {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -63,14 +69,5 @@ section#more-projects {
     .project-thumb img {
       height: clamp(5rem, 15vw, 10rem);
     }
-  }
-}
-
-@keyframes polzek {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
   }
 }

@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 import SlidingProjectRow from '../components/SlidingProjectRow';
 import './MoreProjects.scss';
 import Rect3 from '../../public/rect3.svg';
@@ -6,14 +8,6 @@ import projects from '../data/projects';
 import images from '../data/projectImages';
 
 const MoreProjects = () => {
-  // TODO: dodaj krizemko ipd.
-
-  const arraySlice = (array, startPercentage, length) => {
-    const startIndex = Math.floor(array.length * startPercentage);
-    const endIndex = Math.min(array.length - 1, startIndex + length);
-    return array.slice(startIndex, endIndex);
-  };
-
   const sliceLength = projects.length / 3;
 
   const projectsWithImages = shuffle(
@@ -30,20 +24,31 @@ const MoreProjects = () => {
   return (
     <section id="more-projects">
       <div className="container">
-        <SlidingProjectRow projectArr={arrTwice(slice1)} reverse={false} />
-        <SlidingProjectRow projectArr={arrTwice(slice2)} reverse={true} />
+        <SlidingProjectRow projectArr={arrTwice(slice1)} />
+        <SlidingProjectRow projectArr={arrTwice(slice2)} reverse />
         <span className="more-text">
           more of my personal{' '}
           <mark>
             <span>projects...</span>
-            <img className="highlight" src={Rect3} alt="" />
+
+            <motion.img
+              className="highlight"
+              src={Rect3}
+              alt=""
+              initial={{ clipPath: 'inset(0 100% 0 0)' }}
+              whileInView={{ clipPath: 'inset(0 0 0 0)' }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0 }}
+            />
           </mark>
         </span>
-        <SlidingProjectRow projectArr={arrTwice(slice3)} reverse={false} />
+        <SlidingProjectRow projectArr={arrTwice(slice3)} />
       </div>
     </section>
   );
 };
+
+// utility functions
 
 const arrTwice = (arr) => [...arr, ...arr];
 const shuffle = (array) => {
@@ -52,6 +57,11 @@ const shuffle = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+};
+const arraySlice = (array, startPercentage, length) => {
+  const startIndex = Math.floor(array.length * startPercentage);
+  const endIndex = Math.min(array.length - 1, startIndex + length);
+  return array.slice(startIndex, endIndex);
 };
 
 export default MoreProjects;

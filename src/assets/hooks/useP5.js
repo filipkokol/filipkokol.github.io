@@ -58,7 +58,7 @@ export function useP5(sketchFactory, options = {}) {
       document.removeEventListener('visibilitychange', onVisibilityChange);
       setTimeout(() => instance.remove(), 0);
     };
-  }, []); // sketchFactory intentionally not in deps — see note below
+  }, []);
 
   return containerRef;
 }
