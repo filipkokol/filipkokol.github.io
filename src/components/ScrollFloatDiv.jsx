@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 
 const ScrollFloatDiv = ({ children, className }) => {
   const sectionRef = useRef(null);

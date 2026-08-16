@@ -8,11 +8,19 @@ import { motion } from 'motion/react';
 import ScrollArrow from '../../public/scroll-triangle.svg';
 import Rect1 from '../../public/rect1.svg';
 import Rect2 from '../../public/rect2.svg';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
     <section id="hero">
       <HeroCanvas />
+
+      <div className={'clicker ' + (isClicked && 'destroyed')} onClick={() => setIsClicked(true)}>
+        <p>click</p>
+        <p>me</p>
+      </div>
 
       <div className="hero-text">
         <FloatUpDiv>

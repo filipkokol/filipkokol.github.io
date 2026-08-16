@@ -1,4 +1,4 @@
-// NOTE: this part was completely written with AI. i have no idea how to do this.
+// NOTE: this file was completely written with AI. i have no idea how to do this.
 
 import { useEffect, useRef } from 'react';
 import p5 from 'p5';

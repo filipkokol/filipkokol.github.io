@@ -1,4 +1,3 @@
-// import { motion } from 'motion/react';
 import projectImages from '../data/projectImages';
 import ProjectRow from './ProjectRow';
 import ScrollFloatDiv from './ScrollFloatDiv';

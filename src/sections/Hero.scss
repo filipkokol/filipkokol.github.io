@@ -45,7 +45,7 @@ section#hero {
         right: 0;
         left: 0;
         height: 1px;
-        background: #00000033;
+        background: #00000044;
       }
 
       &::after {
@@ -55,7 +55,7 @@ section#hero {
         right: 0;
         left: 0;
         height: 1px;
-        background: #00000033;
+        background: #00000044;
       }
 
       h1 {
@@ -140,6 +140,25 @@ section#hero {
     position: relative;
     z-index: 1;
   }
+
+  @include bp.tablet {
+    .hero-row {
+      h1 {
+        font-weight: 450;
+
+        letter-spacing: -0.01em;
+      }
+
+      // &.bordered::after,
+      // &.bordered::before {
+      //   height: 2px;
+      // }
+
+      &.bordered h1 {
+        font-weight: 400;
+      }
+    }
+  }
 }
 
 @keyframes scrollWheel {
@@ -154,5 +173,39 @@ section#hero {
     opacity: 0;
     // top: 30px;
     transform: translateY(0%);
+  }
+}
+
+.clicker {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  background: #7ce16f;
+  width: min(20vw, 100px);
+  height: min(20vw, 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: rotate(20deg);
+  mix-blend-mode: multiply;
+  transition: scale 0.2s;
+
+  p {
+    color: #3e7137;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 80%;
+    transform: translateY(20%);
+    letter-spacing: 0.1em;
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &.destroyed {
+    scale: 0;
   }
 }

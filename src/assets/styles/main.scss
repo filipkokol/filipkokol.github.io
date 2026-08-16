@@ -253,6 +253,10 @@ h3 {
   line-height: 1;
 }
 
+.invisible {
+  opacity: 0;
+}
+
 // hovering
 
 @media screen and (hover: hover) {
