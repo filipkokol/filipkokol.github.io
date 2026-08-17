@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="footer-top">
             <div className="logo jump-hover">
               <h1>Filip K</h1>
-              <a href="https://lulekfun.github.io/skratek/">
+              <a href="https://skratek.github.io/skratek/">
                 <img className="skratek" src={SkratekLogo} alt="" />
               </a>
             </div>

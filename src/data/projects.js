@@ -103,14 +103,14 @@ const projects = [
       'I remember having an idea of creating this game during a boring class at college. I had my laptop with me and started implementing it right away.',
       'I had been using p5.js graphics library for quite some time then and have also already created a few simple games, but not this complex. I invented the game logic myself, having never learned a proper way to structure computer games.',
       'My girlfriend Lara drew the main character, the little dwarf (“Škratek” in Slovene), which I loved so much I used it as a logo and an easter egg in my portfolio.',
-      'Go try it out! It is controlled by pressing left and right arrow keys the keyboard. There are 10 levels and a special hard challenge at the end!',
+      'Go try it out! It is controlled by pressing left and right arrow keys the keyboard, or tapping to the left or right on mobile. There are 10 levels and a special hard challenge at the end!',
     ],
     desc_short: 'A minimalistic web game inspired by "doodle jump"',
     category: 'Games & Visuals',
     img_extras: ['jumping-dwarf-2.png', 'jumping-dwarf-3.png', 'jumping-dwarf-4.png'],
     tags: ['p5.js', 'javascript', 'design'],
     color: '#C9DAF8',
-    link_outer: 'https://lulekfun.github.io/skratek/',
+    link_outer: 'https://skratek.github.io/skratek/',
   },
   {
     slug: 'zlozek',
@@ -174,7 +174,7 @@ const projects = [
     category: 'Games & Visuals',
     tags: ['p5.js', 'javascript'],
     color: '#FCE5CD',
-    link_outer: 'https://lulekfun.github.io/crtica/',
+    link_outer: 'https://skratek.github.io/crtica/',
   },
   {
     slug: 'snake',
@@ -183,7 +183,7 @@ const projects = [
     category: 'Games & Visuals',
     tags: ['p5.js', 'javascript'],
     color: '#CBCCF0',
-    link_outer: 'https://lulekfun.github.io/kacica/',
+    link_outer: 'https://skratek.github.io/kacica/',
   },
   {
     slug: 'world-flags',
@@ -238,7 +238,7 @@ const projects = [
     category: 'Games & Visuals',
     tags: ['p5.js', 'drawing'],
     color: '#cbf0cc',
-    link_outer: 'https://lulekfun.github.io/vesoljcki/',
+    link_outer: 'https://skratek.github.io/vesoljcki/',
   },
   {
     slug: 'word-of-the-day',
