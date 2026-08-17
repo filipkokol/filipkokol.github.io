@@ -31,10 +31,10 @@ const Footer = () => {
             </div>
 
             <div className="social-links upper">
-              <a className="underlined-hover" href="#">
+              <a className="underlined-hover" href="https://www.linkedin.com/in/filip-kokol-bb291342a/" target="_blank">
                 LinkedIn
               </a>
-              <a className="underlined-hover" href="https://github.com/vodnibivol">
+              <a className="underlined-hover" href="https://github.com/vodnibivol" target="_blank">
                 Github
               </a>
             </div>

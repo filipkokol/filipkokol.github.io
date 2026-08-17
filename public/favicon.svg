@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <path d="M512,128L512,384C512,454.645 454.645,512 384,512L128,512C57.355,512 0,454.645 0,384L0,128C0,57.355 57.355,0 128,0L384,0C454.645,0 512,57.355 512,128Z" style="fill:white;"/>
-    <g transform="matrix(3.975,0,0,3.975,256,271)">
-        <g transform="matrix(1,0,0,1,-40,-35)">
-            <g transform="matrix(10,0,0,10,0,0)">
-                <path d="M1,4L0,4L0,3L1,3L1,1L2,1L2,0L6,0L6,1L7,1L7,3L8,3L8,4L7,4L7,5L6,5L6,7L5,7L5,5L3,5L3,7L2,7L2,5L1,5L1,4ZM2,2L2,3L3,3L3,4L5,4L5,3L6,3L6,2L5,2L5,3L3,3L3,2L2,2Z"/>
+    <g transform="matrix(1,0,0,1,-1416,-0.25)">
+        <g id="Favicon" transform="matrix(0.426667,0,0,0.812698,882.666667,0.25)">
+            <rect x="1250" y="0" width="1200" height="630" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="1250" y="0" width="1200" height="630"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(2.34375,0,0,1.230469,-2068.75,-0.307617)">
+                    <path d="M1928,128.25L1928,384.25C1928,454.895 1870.645,512.25 1800,512.25L1544,512.25C1473.355,512.25 1416,454.895 1416,384.25L1416,128.25C1416,57.605 1473.355,0.25 1544,0.25L1800,0.25C1870.645,0.25 1928,57.605 1928,128.25Z" style="fill:rgb(255,255,240);"/>
+                </g>
+                <g transform="matrix(9.96611,0,0,5.232208,1850,332.226563)">
+                    <g transform="matrix(1,0,0,1,-40,-35)">
+                        <g transform="matrix(10,0,0,10,0,0)">
+                            <path d="M1,4L0,4L0,3L1,3L1,1L2,1L2,0L6,0L6,1L7,1L7,3L8,3L8,4L7,4L7,5L6,5L6,7L5,7L5,5L3,5L3,7L2,7L2,5L1,5L1,4ZM2,2L2,3L3,3L3,4L5,4L5,3L6,3L6,2L5,2L5,3L3,3L3,2L2,2Z"/>
+                        </g>
+                    </g>
+                </g>
             </g>
         </g>
     </g>
