@@ -8,18 +8,18 @@ import { motion } from 'motion/react';
 import ScrollArrow from '../../public/scroll-triangle.svg';
 import Rect1 from '../../public/rect1.svg';
 import Rect2 from '../../public/rect2.svg';
-import { useState } from 'react';
+
+import useStickyState from '../assets/hooks/useStickyState';
 
 const Hero = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useStickyState(false, 'user-has-clicked');
 
   return (
-    <section id="hero">
+    <section id="hero" onClick={() => setIsClicked(true)}>
       <HeroCanvas />
 
-      <div className={'clicker ' + (isClicked && 'destroyed')} onClick={() => setIsClicked(true)}>
-        <p>click</p>
-        <p>me</p>
+      <div className={'clicker ' + (isClicked && 'destroyed')}>
+        <p>click!</p>
       </div>
 
       <div className="hero-text">

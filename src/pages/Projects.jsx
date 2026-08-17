@@ -6,7 +6,11 @@ import projects from '../data/projects';
 import WipeDiv from '../components/WipeDiv';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
 
+import usePageTitle from '../assets/hooks/usePageTitle';
+
 const Projects = () => {
+  usePageTitle('Projects');
+
   const categories = ['Fullstack', 'Frontend', 'Games & Visuals'];
 
   return (

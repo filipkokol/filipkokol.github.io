@@ -1,5 +1,6 @@
 import FloatUpDiv from '../components/FloatUpDiv';
 import WipeDiv from '../components/WipeDiv';
+import usePageTitle from '../assets/hooks/usePageTitle';
 
 import './About.scss';
 
@@ -7,6 +8,8 @@ import meImg from '../assets/img/me-1.jpg';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
 
 const About = () => {
+  usePageTitle('About');
+
   return (
     <section id="about-me">
       <div className="container">
@@ -64,11 +67,15 @@ const About = () => {
 
           <FloatUpDiv>
             <div className="tags">
-              <div className="tag">CV</div>
-              <a href="https://github.com/vodnibivol">
-                <div className="tag">Github</div>
+              <a href="/cv_it.pdf">
+                <div className="tag btn-outlined">CV</div>
               </a>
-              <div className="tag">LinkedIn</div>
+              <a href="https://github.com/vodnibivol" target="_blank">
+                <div className="tag btn-outlined">Github</div>
+              </a>
+              <a href="https://www.linkedin.com/in/filip-kokol-bb291342a/" target="_blank">
+                <div className="tag btn-outlined">LinkedIn</div>
+              </a>
             </div>
           </FloatUpDiv>
         </div>

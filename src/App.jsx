@@ -16,7 +16,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 2000))]).then(() =>
+    Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 2000))]).then(() =>
       setIsLoading(false),
     );
   }, []);

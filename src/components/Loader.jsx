@@ -13,7 +13,7 @@ const Loader = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'ivory',
+        background: 'white',
         zIndex: 9999,
         fontWeight: '900',
       }}

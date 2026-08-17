@@ -95,6 +95,10 @@ section#project-details {
 
     .img-extras .img-container {
       flex-direction: row;
+
+      img {
+        max-height: 30rem;
+      }
     }
   }
 }

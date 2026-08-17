@@ -1,4 +1,8 @@
+import usePageTitle from '../assets/hooks/usePageTitle';
+
 const About = () => {
+  usePageTitle('404');
+
   return (
     <section id="about-me">
       <div className="container">

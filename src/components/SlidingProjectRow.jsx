@@ -26,8 +26,8 @@ const SlidingProjectRow = ({ projectArr, reverse }) => {
   return (
     <div className="project-row" ref={rowRef}>
       {projectArr.map((proj, i) => (
-        <Link to={`/project/${proj.slug}`}>
-          <div className="project-thumb" style={{ backgroundColor: proj.color }} key={i}>
+        <Link to={`/project/${proj.slug}`} key={i}>
+          <div className="project-thumb" style={{ backgroundColor: proj.color }}>
             <img src={proj.img} alt={proj.title} loading="eager" decoding="sync" />
           </div>
         </Link>

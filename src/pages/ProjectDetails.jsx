@@ -11,16 +11,20 @@ import arrowRight from '../../public/arrow-right.svg';
 import WipeDiv from '../components/WipeDiv';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
 
+import usePageTitle from '../assets/hooks/usePageTitle';
+
 const ProjectDetails = () => {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
+
+  usePageTitle(project?.title || '404');
 
   if (!project) {
     return (
       <section id="project-details">
         <div className="container 404">
           <h1>Project not found</h1>
-          <p>Something isn't quite clicking here...</p>
+          <p>I have a bad feeling about this...</p>
           <br />
           <Link to="/projects" className="underlined">
             <h3 className="upper">Back to projects</h3>
@@ -56,15 +60,15 @@ const ProjectDetails = () => {
         <div className="text-container">
           <div className="description">
             {(project.desc_long || [project.desc]).map((paragraph, i) => (
-              <ScrollFloatDiv>
-                <p key={i}>{paragraph}</p>
+              <ScrollFloatDiv key={i}>
+                <p>{paragraph}</p>
               </ScrollFloatDiv>
             ))}
           </div>
 
           {project.link_outer && (
             <ScrollFloatDiv>
-              <a href={project.link_outer} className="link-wrapper">
+              <a href={project.link_outer} target="_blank" className="link-wrapper">
                 <button className="btn-outlined demo-btn">
                   <span>Try it out</span>
                   <img src={arrowRight} alt="" />
@@ -76,7 +80,7 @@ const ProjectDetails = () => {
 
         {project.img_extras && (
           <div className="img-extras">
-            <h2>Additional photos</h2>
+            <h2 className="upper">Additional photos</h2>
 
             <div className="img-row">
               {project.img_extras.map((img) => (
