@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'motion/react';
+import 'react-photo-view/dist/react-photo-view.css';
 
 import Layout from './Layout';
 import Home from './pages/Home';

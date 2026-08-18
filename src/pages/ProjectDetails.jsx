@@ -1,16 +1,23 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
+// data
 import projects from '../data/projects';
 import images from '../data/projectImages';
 
+// css
 import './ProjectDetails.scss';
-import Tags from '../components/Tags';
 
+// assets
 import arrowRight from '../assets/img/svgs/arrow-right.svg';
 
+// components
 import WipeDiv from '../components/WipeDiv';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
+import Tags from '../components/Tags';
+import NotFound from '../pages/NotFound';
 
+// hooks
 import usePageTitle from '../assets/hooks/usePageTitle';
 
 const ProjectDetails = () => {
@@ -20,18 +27,7 @@ const ProjectDetails = () => {
   usePageTitle(project?.title || '404');
 
   if (!project) {
-    return (
-      <section id="project-details">
-        <div className="container 404">
-          <h1>Project not found</h1>
-          <p>I have a bad feeling about this...</p>
-          <br />
-          <Link to="/projects" className="underlined">
-            <h3 className="upper">Back to projects</h3>
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFound title="Project not Found." linkText="All Projects" link="/projects" />;
   }
 
   return (
@@ -69,7 +65,7 @@ const ProjectDetails = () => {
           {project.link_outer && (
             <ScrollFloatDiv>
               <a href={project.link_outer} target="_blank" className="link-wrapper">
-                <button className="btn-outlined demo-btn">
+                <button className="btn-outlined">
                   <span>Try it out</span>
                   <img src={arrowRight} alt="Right arrow" />
                 </button>
@@ -82,13 +78,15 @@ const ProjectDetails = () => {
           <div className="img-extras">
             <h2 className="upper">Additional photos</h2>
 
-            <div className="img-row">
-              {project.img_extras.map((img) => (
-                <div className="img-container" key={img}>
-                  <img src={images[img]} alt="Alternative image" />
-                </div>
-              ))}
-            </div>
+            <PhotoProvider maskOpacity={0.9} bannerVisible={false}>
+              <div className="img-row">
+                {project.img_extras.map((img) => (
+                  <PhotoView src={images[img]} key={img}>
+                    <img src={images[img]} alt="Alternative image" />
+                  </PhotoView>
+                ))}
+              </div>
+            </PhotoProvider>
           </div>
         )}
       </div>

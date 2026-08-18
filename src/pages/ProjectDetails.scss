@@ -63,10 +63,6 @@ section#project-details {
 
   a.link-wrapper {
     align-self: flex-start;
-
-    .demo-btn img {
-      height: 0.5em;
-    }
   }
 
   .img-extras {
@@ -80,7 +76,15 @@ section#project-details {
     .img-row {
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
       gap: var(--space-5);
+
+      img {
+        min-width: 0;
+        cursor: pointer;
+        max-height: 20rem;
+        object-fit: contain;
+      }
     }
   }
 
@@ -94,18 +98,8 @@ section#project-details {
       }
     }
 
-    .img-extras {
-      .img-row {
-        flex-direction: row;
-      }
-
-      .img-container {
-        flex-direction: row;
-
-        img {
-          max-height: 30rem;
-        }
-      }
+    .img-extras .img-row {
+      flex-direction: row;
     }
   }
 }

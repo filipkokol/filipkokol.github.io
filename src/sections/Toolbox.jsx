@@ -21,7 +21,7 @@ const Toolbox = () => {
               alt="Highlight"
               initial={{ clipPath: 'inset(0 0 0 100%)' }}
               whileInView={{ clipPath: 'inset(0 0 0 0)' }}
-              viewport={{ once: false, margin: '-20%' }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0 }}
             />
           </mark>

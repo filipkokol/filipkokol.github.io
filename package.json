@@ -1,7 +1,7 @@
 {
   "name": "filipkokol",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -20,6 +20,7 @@
     "react": "^19.2.8",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.8",
+    "react-photo-view": "^1.2.7",
     "react-router-dom": "^7.18.2"
   },
   "devDependencies": {

@@ -1,0 +1,12 @@
+@use '../assets/styles/breakpoints' as bp;
+
+section#not-found {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+
+    padding: clamp(var(--space-7), 10vw, var(--space-8)) 0;
+  }
+}

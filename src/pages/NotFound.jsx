@@ -1,32 +1,26 @@
 import usePageTitle from '../assets/hooks/usePageTitle';
+import { Link } from 'react-router-dom';
 
-const About = () => {
-  usePageTitle('404');
+import './NotFound.scss';
+import arrowRight from '../assets/img/svgs/arrow-right.svg';
+
+const NotFound = ({ title = 'Not Found.', link = '/', linkText = 'Go Home' }) => {
+  usePageTitle('Not Found');
 
   return (
-    <section id="about-me">
+    <section id="not-found">
       <div className="container">
-        <h1>404.</h1>
-        <div className="text-container">
-          <div className="description">
-            <p>
-              I messed this one up.
-              <br />
-              Sorry...
-            </p>
-          </div>
+        <h1>{title}</h1>
 
-          <div className="tags">
-            <div className="tag">CV</div>
-            <a href="https://github.com/vodnibivol">
-              <div className="tag">Github</div>
-            </a>
-            <div className="tag">LinkedIn</div>
-          </div>
-        </div>
+        <Link to={link}>
+          <button className="btn-outlined">
+            <span>{linkText}</span>
+            <img src={arrowRight} alt="Right arrow" />
+          </button>
+        </Link>
       </div>
     </section>
   );
 };
 
-export default About;
+export default NotFound;
