@@ -79,6 +79,7 @@ section#project-details {
 
     .img-row {
       display: flex;
+      flex-direction: column;
       gap: var(--space-5);
     }
   }
@@ -93,11 +94,17 @@ section#project-details {
       }
     }
 
-    .img-extras .img-container {
-      flex-direction: row;
+    .img-extras {
+      .img-row {
+        flex-direction: row;
+      }
 
-      img {
-        max-height: 30rem;
+      .img-container {
+        flex-direction: row;
+
+        img {
+          max-height: 30rem;
+        }
       }
     }
   }

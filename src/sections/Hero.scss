@@ -23,6 +23,10 @@ section#hero {
     pointer-events: none;
 
     margin: 0 auto;
+
+    .medium-bold {
+      font-weight: 550;
+    }
   }
 
   .hero-row {

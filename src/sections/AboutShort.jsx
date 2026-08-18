@@ -1,6 +1,6 @@
 import './AboutShort.scss';
 import meImg from '../assets/img/me-2.jpg';
-import ArrowIcon from '../../public/arrow1.svg';
+import ArrowIcon from '../assets/img/svgs/arrow1.svg';
 
 import WipeDiv from '../components/WipeDiv';
 
@@ -10,7 +10,7 @@ const AboutShort = () => {
       <div className="container">
         <div className="about-content">
           <WipeDiv className="img-container">
-            <img src={meImg} alt="" />
+            <img src={meImg} alt="Myself" />
           </WipeDiv>
 
           <p className="about-text">
@@ -21,7 +21,7 @@ const AboutShort = () => {
 
         <div className="scroll-hint upper">
           <span>See my projects</span>
-          <img src={ArrowIcon} alt="" />
+          <img src={ArrowIcon} alt="Down arrow" />
         </div>
       </div>
     </section>

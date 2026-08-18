@@ -18,16 +18,19 @@ section#more-projects {
 
     position: relative;
 
+    // safari flickering fixes
     isolation: isolate;
     contain: layout paint;
-
     will-change: transform;
-
-    backface-visibility: hidden; // safari flickering fix
-    -webkit-backface-visibility: hidden; // safari flickering fix
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     &:nth-of-type(2) {
       animation-direction: reverse;
+    }
+
+    &:nth-of-type(3) {
+      margin-left: -4rem;
     }
   }
 

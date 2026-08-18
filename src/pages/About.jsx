@@ -14,7 +14,7 @@ const About = () => {
     <section id="about-me">
       <div className="container">
         <WipeDiv className="cover-img">
-          <img src={meImg} alt="" />
+          <img src={meImg} alt="Myself" />
         </WipeDiv>
 
         <FloatUpDiv>

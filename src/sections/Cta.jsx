@@ -11,7 +11,7 @@ const Cta = () => {
           <FloatUpDiv>
             <p>I really hope to hear from you soon!</p>
           </FloatUpDiv>
-          <img src={meImg} alt="" />
+          <img src={meImg} alt="Myself" />
         </div>
       </div>
     </section>

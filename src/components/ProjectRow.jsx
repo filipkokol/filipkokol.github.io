@@ -15,7 +15,7 @@ const ProjectRow = ({ slug, title, desc, tags, img, color }) => {
       </div>
 
       <Link to={'/project/' + slug} className="project-image" style={{ backgroundColor: color || 'red' }}>
-        <img src={img} alt="" />
+        <img src={img} alt={title + ' project thumbnail'} />
       </Link>
     </>
   );

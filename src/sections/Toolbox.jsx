@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 
 import './Toolbox.scss';
 
-import highlight from '../../public/rect4.svg';
+import highlight from '../assets/img/svgs/rect4.svg';
 
 const Toolbox = () => {
-  const imageModules = import.meta.glob('../../public/svg-logos/*.svg', { eager: true });
+  const imageModules = import.meta.glob('../assets/img/svgs/svg-logos/*.svg', { eager: true });
   const imagesArray = Object.values(imageModules).map((mod) => mod.default);
 
   return (
@@ -18,7 +18,7 @@ const Toolbox = () => {
             <motion.img
               className="highlight"
               src={highlight}
-              alt=""
+              alt="Highlight"
               initial={{ clipPath: 'inset(0 0 0 100%)' }}
               whileInView={{ clipPath: 'inset(0 0 0 0)' }}
               viewport={{ once: false, margin: '-20%' }}
@@ -31,7 +31,7 @@ const Toolbox = () => {
         <div className="tools-grid">
           {imagesArray.map((img, i) => (
             <div className="tools-grid-cell" key={i}>
-              <img src={img} alt="" className="icon" />
+              <img src={img} alt="Tool icon" className="icon" />
             </div>
           ))}
         </div>

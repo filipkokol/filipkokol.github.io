@@ -6,7 +6,7 @@ import images from '../data/projectImages';
 import './ProjectDetails.scss';
 import Tags from '../components/Tags';
 
-import arrowRight from '../../public/arrow-right.svg';
+import arrowRight from '../assets/img/svgs/arrow-right.svg';
 
 import WipeDiv from '../components/WipeDiv';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
@@ -53,7 +53,7 @@ const ProjectDetails = () => {
 
         <ScrollFloatDiv delay={0.2}>
           <div className="cover-image" style={{ backgroundColor: project.color }}>
-            <img src={images[project.slug + '.png']} alt="" />
+            <img src={images[project.slug + '.png']} alt="Project hero image" />
           </div>
         </ScrollFloatDiv>
 
@@ -71,7 +71,7 @@ const ProjectDetails = () => {
               <a href={project.link_outer} target="_blank" className="link-wrapper">
                 <button className="btn-outlined demo-btn">
                   <span>Try it out</span>
-                  <img src={arrowRight} alt="" />
+                  <img src={arrowRight} alt="Right arrow" />
                 </button>
               </a>
             </ScrollFloatDiv>
@@ -85,7 +85,7 @@ const ProjectDetails = () => {
             <div className="img-row">
               {project.img_extras.map((img) => (
                 <div className="img-container" key={img}>
-                  <img src={images[img]} alt="" />
+                  <img src={images[img]} alt="Alternative image" />
                 </div>
               ))}
             </div>

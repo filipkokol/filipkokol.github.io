@@ -5,9 +5,9 @@ import FloatUpDiv from '../components/FloatUpDiv';
 
 import { motion } from 'motion/react';
 
-import ScrollArrow from '../../public/scroll-triangle.svg';
-import Rect1 from '../../public/rect1.svg';
-import Rect2 from '../../public/rect2.svg';
+import ScrollArrow from '../assets/img/svgs/scroll-triangle.svg';
+import Rect1 from '../assets/img/svgs/rect1.svg';
+import Rect2 from '../assets/img/svgs/rect2.svg';
 
 import useStickyState from '../assets/hooks/useStickyState';
 
@@ -33,7 +33,7 @@ const Hero = () => {
                 <motion.img
                   className="highlight"
                   src={Rect1}
-                  alt=""
+                  alt="Highlight"
                   initial={{ clipPath: 'inset(0 100% 0 0)' }}
                   whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -53,13 +53,13 @@ const Hero = () => {
         <FloatUpDiv delay={0.4}>
           <div className="hero-row bordered align-center">
             <h1>
-              the WW
+              the W<span className="medium-bold">W</span>
               <mark>
                 <span>WEB</span>
                 <motion.img
                   className="highlight"
                   src={Rect2}
-                  alt=""
+                  alt="Highlight"
                   initial={{ clipPath: 'inset(0 0 0 100%)' }}
                   whileInView={{ clipPath: 'inset(0 0 0 0)' }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -73,7 +73,7 @@ const Hero = () => {
 
       <div className="scroll-hint upper">
         <span>
-          Scroll <img src={ScrollArrow} alt="" /> down
+          Scroll <img src={ScrollArrow} alt="Down arrow" /> down
         </span>
       </div>
       {/* </div> */}

@@ -1,5 +1,5 @@
 import './Footer.scss';
-import SkratekLogo from '../../public/skratek.svg';
+import SkratekLogo from '../assets/img/svgs/skratek.svg';
 import FooterCanvas from '../components/FooterCanvas';
 
 import { useRef } from 'react';
@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="logo jump-hover">
               <h1>Filip K</h1>
               <a href="https://skratek.github.io/skratek/">
-                <img className="skratek" src={SkratekLogo} alt="" />
+                <img className="skratek" src={SkratekLogo} alt="Tiny dwarf" />
               </a>
             </div>
 

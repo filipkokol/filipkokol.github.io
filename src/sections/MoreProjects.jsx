@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 import SlidingProjectRow from '../components/SlidingProjectRow';
 import './MoreProjects.scss';
-import Rect3 from '../../public/rect3.svg';
+import Rect3 from '../assets/img/svgs/rect3.svg';
 
 import projects from '../data/projects';
 import images from '../data/projectImages';
@@ -34,7 +34,7 @@ const MoreProjects = () => {
             <motion.img
               className="highlight"
               src={Rect3}
-              alt=""
+              alt="Highlight"
               initial={{ clipPath: 'inset(0 100% 0 0)' }}
               whileInView={{ clipPath: 'inset(0 0 0 0)' }}
               viewport={{ once: false, amount: 0.3 }}
