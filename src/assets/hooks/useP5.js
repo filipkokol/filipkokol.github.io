@@ -1,7 +1,8 @@
 // NOTE: this file was completely written with AI. i have no idea how to do this.
 
 import { useEffect, useRef } from 'react';
-import p5 from 'p5';
+import p5 from 'q5';
+// import q5 from 'q5';
 
 /**
  * Mounts a p5 instance bound to a container div, and automatically

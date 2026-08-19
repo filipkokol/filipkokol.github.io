@@ -1,5 +1,3 @@
-import p5 from 'p5';
-
 import { state } from './state.js';
 
 export default class Ants {
@@ -75,31 +73,15 @@ class Ant {
   randomEdgePos() {
     const margin = 20;
 
-    const w = this.p5.width;
-    const h = this.p5.height;
-    const side = Math.floor(this.p5.random(4)); // top, right, bottom, left
+    const canvasCenter = this.p5.createVector(this.p5.width / 2, this.p5.height / 2);
+    canvasCenter.add(
+      this.p5
+        .createVector()
+        .random2D()
+        .setMag(this.p5.width / 2 + margin),
+    );
 
-    let x, y;
-    switch (side) {
-      case 0: // top
-        x = this.p5.random(w);
-        y = -margin;
-        break;
-      case 1: // right
-        x = w + margin;
-        y = this.p5.random(h);
-        break;
-      case 2: // bottom
-        x = this.p5.random(w);
-        y = h + margin;
-        break;
-      case 3: // left
-        x = -margin;
-        y = this.p5.random(h);
-        break;
-    }
-
-    return this.p5.createVector(x, y);
+    return canvasCenter;
   }
 
   retire() {
@@ -140,23 +122,20 @@ class Ant {
     // update location from calculations
     this.vel.add(this.acc);
     this.acc.setMag(0); // reset acceleration
-    this.pos.add(p5.Vector.mult(this.vel, state.dt * 66));
+    this.pos.add(this.vel.copy().mult(state.dt * 66));
   }
 
   get isInFrame() {
     const margin = 10;
-
-    return (
-      this.pos.x > -margin &&
-      this.pos.x < this.p5.width + margin &&
-      this.pos.y > -margin &&
-      this.pos.y < this.p5.height + margin
-    );
+    const canvasCenter = this.p5.createVector(this.p5.width / 2, this.p5.height / 2);
+    return this.pos.dist(canvasCenter) < this.p5.width / 2 + margin;
   }
 
   seek(target) {
     // calculate new positions
-    const desiredVel = p5.Vector.sub(target, this.pos);
+    // const desiredVel = target.copy().sub(this.pos);
+    const desiredVel = this.p5.createVector(target.x, target.y).sub(this.pos);
+
     const distance = desiredVel.mag(); // distance to the target
 
     // arrive => slow down
@@ -183,7 +162,7 @@ class Ant {
       desiredVel.setHeading(currentAngle + clampedAngleDiff);
     }
 
-    const correction = p5.Vector.sub(desiredVel, this.vel); // steer === correction
+    const correction = desiredVel.copy().sub(this.vel); // steer === correction
     correction.limit(this.maxForce * state.dt * 66);
     this.applyForce(correction);
   }
