@@ -32,10 +32,7 @@ export default function createSketch(container) {
       ants.draw();
     };
 
-    console.log(p);
-
-    p.mouseClicked = () => {
-      console.log('ADS');
+    p.mousePressed = () => {
       state.mouseHasBeenClicked = true;
 
       if (cursorIsOffCanvas()) return;
@@ -49,7 +46,6 @@ export default function createSketch(container) {
     p.windowResized = () => setCanvasSize();
 
     const setCanvasSize = () => {
-      console.log('set size');
       const { offsetWidth, offsetHeight } = container;
       p.resizeCanvas(offsetWidth, offsetHeight);
     };

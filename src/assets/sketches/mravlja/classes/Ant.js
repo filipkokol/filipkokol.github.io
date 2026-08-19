@@ -73,15 +73,31 @@ class Ant {
   randomEdgePos() {
     const margin = 20;
 
-    const canvasCenter = this.p5.createVector(this.p5.width / 2, this.p5.height / 2);
-    canvasCenter.add(
-      this.p5
-        .createVector()
-        .random2D()
-        .setMag(this.p5.width / 2 + margin),
-    );
+    const w = this.p5.width;
+    const h = this.p5.height;
+    const side = Math.floor(this.p5.random(4)); // top, right, bottom, left
 
-    return canvasCenter;
+    let x, y;
+    switch (side) {
+      case 0: // top
+        x = this.p5.random(w);
+        y = -margin;
+        break;
+      case 1: // right
+        x = w + margin;
+        y = this.p5.random(h);
+        break;
+      case 2: // bottom
+        x = this.p5.random(w);
+        y = h + margin;
+        break;
+      case 3: // left
+        x = -margin;
+        y = this.p5.random(h);
+        break;
+    }
+
+    return this.p5.createVector(x, y);
   }
 
   retire() {
@@ -127,8 +143,13 @@ class Ant {
 
   get isInFrame() {
     const margin = 10;
-    const canvasCenter = this.p5.createVector(this.p5.width / 2, this.p5.height / 2);
-    return this.pos.dist(canvasCenter) < this.p5.width / 2 + margin;
+
+    return (
+      this.pos.x > -margin &&
+      this.pos.x < this.p5.width + margin &&
+      this.pos.y > -margin &&
+      this.pos.y < this.p5.height + margin
+    );
   }
 
   seek(target) {
