@@ -169,12 +169,6 @@ h3 {
   font-size: var(--text-sm);
 }
 
-// @include bp.mobile {
-//   h1 {
-//     font-size: var(--text-2xl);
-//   }
-// }
-
 @include bp.tablet {
   h1 {
     font-weight: 600;
@@ -194,9 +188,6 @@ h3 {
   h3 {
     font-size: var(--text-md);
   }
-}
-
-@include bp.desktop {
 }
 
 // utility classes

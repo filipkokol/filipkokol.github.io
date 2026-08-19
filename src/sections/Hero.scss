@@ -25,7 +25,7 @@ section#hero {
     margin: 0 auto;
 
     .medium-bold {
-      font-weight: 550;
+      font-weight: 600;
     }
   }
 
@@ -63,7 +63,7 @@ section#hero {
       }
 
       h1 {
-        line-height: 1;
+        line-height: 1.2;
         font-size: clamp(var(--text-2xl), 8vw, 10rem);
       }
     }
@@ -96,7 +96,7 @@ section#hero {
   .align-center {
     text-align: center;
 
-    margin-right: 20vw;
+    margin-right: 7vw;
     padding-right: 0vw;
     transform: rotate(-1deg);
 
@@ -149,17 +149,26 @@ section#hero {
     .hero-row {
       h1 {
         font-weight: 450;
-
-        letter-spacing: -0.01em;
       }
 
-      // &.bordered::after,
-      // &.bordered::before {
-      //   height: 2px;
-      // }
+      &.align-left {
+        margin-left: 7vw;
+      }
 
-      &.bordered h1 {
-        font-weight: 400;
+      &.align-right {
+        margin-right: 12vw;
+      }
+
+      &.bordered {
+        h1 {
+          font-weight: 400;
+        }
+
+        &::before,
+        &::after {
+          // border
+          background: #00000066;
+        }
       }
     }
   }
@@ -175,7 +184,6 @@ section#hero {
   }
   100% {
     opacity: 0;
-    // top: 30px;
     transform: translateY(0%);
   }
 }
