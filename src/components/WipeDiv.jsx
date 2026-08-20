@@ -27,7 +27,7 @@ const WipeDiv = ({ children, className, start = 'left', delay = 0, style = {} })
       }}
       initial={{ maskSize: initial }}
       whileInView={{ maskSize: inView }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay }}
       className={className}
     >
