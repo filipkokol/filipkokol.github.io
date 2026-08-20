@@ -3,13 +3,12 @@ import './Hero.scss';
 import HeroCanvas from '../components/HeroCanvas';
 import FloatUpDiv from '../components/FloatUpDiv';
 
-import { motion } from 'motion/react';
-
 import ScrollArrow from '../assets/img/svgs/scroll-triangle.svg';
 import Rect1 from '../assets/img/svgs/rect1.svg';
 import Rect2 from '../assets/img/svgs/rect2.svg';
 
 import useStickyState from '../assets/hooks/useStickyState';
+import WipeDiv from '../components/WipeDiv';
 
 const Hero = () => {
   const [isClicked, setIsClicked] = useStickyState(false, 'user-has-clicked');
@@ -30,15 +29,9 @@ const Hero = () => {
               <mark>
                 <span>Filip</span>
 
-                <motion.img
-                  className="highlight"
-                  src={Rect1}
-                  alt="Highlight"
-                  initial={{ clipPath: 'inset(0 100% 0 0)' }}
-                  whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0.5 }}
-                />
+                <WipeDiv className="highlight-container" delay={0.5} style={{ transform: 'rotate(3deg) scale(1.2)' }}>
+                  <img src={Rect1} alt="Highlight" className="highlight" />
+                </WipeDiv>
               </mark>
             </h1>
           </div>
@@ -56,15 +49,9 @@ const Hero = () => {
               the W<span className="medium-bold">W</span>
               <mark>
                 <span>WEB</span>
-                <motion.img
-                  className="highlight"
-                  src={Rect2}
-                  alt="Highlight"
-                  initial={{ clipPath: 'inset(0 0 0 100%)' }}
-                  whileInView={{ clipPath: 'inset(0 0 0 0)' }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0.8 }}
-                />
+                <WipeDiv className="highlight-container" start="right" delay={0.8} style={{ transform: 'rotate(-3deg) scale(1.1)' }}>
+                  <img src={Rect2} alt="Highlight" className="highlight" />
+                </WipeDiv>
               </mark>
             </h1>
           </div>
@@ -76,7 +63,6 @@ const Hero = () => {
           Scroll <img src={ScrollArrow} alt="Down arrow" /> down
         </span>
       </div>
-      {/* </div> */}
     </section>
   );
 };

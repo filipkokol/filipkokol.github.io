@@ -33,11 +33,11 @@ const ProjectDetails = () => {
   return (
     <section id="project-details">
       <div className="container">
-        <WipeDiv>
+        <WipeDiv start="top">
           <h1>{project.title}</h1>
         </WipeDiv>
 
-        <WipeDiv>
+        <WipeDiv start="top">
           <h2 className="upper">Project in depth</h2>
         </WipeDiv>
 

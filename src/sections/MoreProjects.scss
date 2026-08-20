@@ -62,10 +62,6 @@ section#more-projects {
 
   mark {
     color: #fff;
-
-    .highlight {
-      scale: 1.1;
-    }
   }
 
   @include bp.mobile {

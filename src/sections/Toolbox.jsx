@@ -1,8 +1,7 @@
-import { motion } from 'motion/react';
-
 import './Toolbox.scss';
 
 import highlight from '../assets/img/svgs/rect4.svg';
+import WipeDiv from '../components/WipeDiv';
 
 const Toolbox = () => {
   const imageModules = import.meta.glob('../assets/img/svgs/svg-logos/*.svg', { eager: true });
@@ -15,15 +14,10 @@ const Toolbox = () => {
           My{' '}
           <mark>
             <span>Toolbox</span>
-            <motion.img
-              className="highlight"
-              src={highlight}
-              alt="Highlight"
-              initial={{ clipPath: 'inset(0 0 0 100%)' }}
-              whileInView={{ clipPath: 'inset(0 0 0 0)' }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0 }}
-            />
+
+            <WipeDiv className="highlight-container" start="right" style={{ transform: 'rotate(3deg) scale(1.05)' }}>
+              <img src={highlight} alt="Highlight" className="highlight" />
+            </WipeDiv>
           </mark>
         </h1>
 

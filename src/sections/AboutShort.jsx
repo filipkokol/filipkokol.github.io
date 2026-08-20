@@ -9,7 +9,7 @@ const AboutShort = () => {
     <section id="about">
       <div className="container">
         <div className="about-content">
-          <WipeDiv className="img-container">
+          <WipeDiv className="img-container" start="top">
             <img src={meImg} alt="Myself" />
           </WipeDiv>
 

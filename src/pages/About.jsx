@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section id="about-me">
       <div className="container">
-        <WipeDiv className="cover-img">
+        <WipeDiv className="cover-img" start="top">
           <img src={meImg} alt="Myself" />
         </WipeDiv>
 

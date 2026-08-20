@@ -132,11 +132,21 @@ mark {
   position: relative;
   background: transparent;
 
-  img.highlight {
+  .highlight-container {
+    // background: red;
+    width: 100%;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    inset: 0;
     z-index: -1;
+  }
+
+  .highlight {
+    z-index: -1;
+    position: absolute;
+    object-fit: contain;
+    inset: 0;
+    height: 100%;
+    width: 100%;
   }
 }
 

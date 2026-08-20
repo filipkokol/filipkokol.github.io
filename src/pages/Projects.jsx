@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="container">
-        <WipeDiv>
+        <WipeDiv start="top">
           <h1>Projects</h1>
         </WipeDiv>
 

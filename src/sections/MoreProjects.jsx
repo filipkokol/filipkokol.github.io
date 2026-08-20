@@ -1,7 +1,8 @@
-import { motion } from 'motion/react';
-
 import SlidingProjectRow from '../components/SlidingProjectRow';
+import WipeDiv from '../components/WipeDiv';
+
 import './MoreProjects.scss';
+
 import Rect3 from '../assets/img/svgs/rect3.svg';
 
 import projects from '../data/projects';
@@ -31,15 +32,9 @@ const MoreProjects = () => {
           <mark>
             <span>projects...</span>
 
-            <motion.img
-              className="highlight"
-              src={Rect3}
-              alt="Highlight"
-              initial={{ clipPath: 'inset(0 100% 0 0)' }}
-              whileInView={{ clipPath: 'inset(0 0 0 0)' }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 1, ease: [0.5, 0, 0, 1], delay: 0 }}
-            />
+            <WipeDiv className="highlight-container" style={{ transform: 'rotate(-3deg) scale(1.05)' }}>
+              <img className="highlight" src={Rect3} alt="Highlight" />
+            </WipeDiv>
           </mark>
         </span>
         <SlidingProjectRow projectArr={arrTwice(slice3)} />
