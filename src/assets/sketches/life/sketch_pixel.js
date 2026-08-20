@@ -56,8 +56,8 @@ export default function createSketch(container) {
     };
 
     p.setup = () => {
-      p.pixelDensity(1); // keep 1:1, matches perf win from step 1
-      p.noSmooth();
+      // p.pixelDensity(1); // keep 1:1, matches perf win from step 1
+      // p.noSmooth();
       computeGridSize();
       const { W, H } = canvasDimensions();
       p.createCanvas(W, H);
@@ -68,12 +68,12 @@ export default function createSketch(container) {
       allocPixelBuffer();
     };
 
-    let prevScrollY = 0;
+    // let prevScrollY = 0;
     p.draw = () => {
-      if (Math.abs(window.scrollY - prevScrollY) > 5) {
-        prevScrollY = window.scrollY;
-        return;
-      }
+      // if (Math.abs(window.scrollY - prevScrollY) > 5) {
+      //   prevScrollY = window.scrollY;
+      //   return;
+      // }
 
       p.loadPixels();
       const d = p.pixelDensity();

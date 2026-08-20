@@ -203,6 +203,7 @@ section#hero {
   transform: rotate(20deg);
   mix-blend-mode: multiply;
   transition: scale 0.2s;
+  pointer-events: none;
 
   p {
     color: #3e7137;
@@ -214,6 +215,7 @@ section#hero {
   }
 
   &:hover {
+    // if no pointer events => not working
     scale: 1.1;
   }
 

@@ -36,7 +36,6 @@ export default class Food {
   }
 
   placeNew(cursorPos) {
-    console.log('asd');
     for (let i = 0; i < this.p5.random(3, 10); i++) {
       const offsetPos = cursorPos.copy().add(this.p5.createVector().random2D().mult(this.p5.random(30)));
       setTimeout(() => this.arr.push(new Grain(this.p5, offsetPos)), i * 100);
