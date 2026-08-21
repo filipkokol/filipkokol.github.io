@@ -1,7 +1,5 @@
-// NOTE: this file was completely written with AI. i have no idea how to do this.
-
 import { useEffect, useRef } from 'react';
-import p5 from 'p5';
+import p5 from 'q5';
 
 /**
  * Mounts a p5 instance bound to a container div, and automatically
@@ -9,13 +7,7 @@ import p5 from 'p5';
  * tab is backgrounded, resuming (loop) when both are true again.
  *
  * @param {(p: p5, container: HTMLElement) => void} sketchFactory
- *   A function matching the `(p) => { p.setup = ...; p.draw = ...; }`
- *   shape your sketches already use — pass your `createSketch(container)`
- *   result directly.
  * @param {object} [options]
- * @param {number} [options.threshold=0] IntersectionObserver threshold
- * @param {string} [options.rootMargin='0px'] IntersectionObserver rootMargin,
- *   e.g. '200px' to start the sketch slightly before it enters the viewport
  * @returns {React.RefObject} attach to the container div
  */
 export function useP5(sketchFactory, options = {}) {
@@ -27,8 +19,25 @@ export function useP5(sketchFactory, options = {}) {
     const container = containerRef.current;
     if (!container) return;
 
+    // 1. Save the browser's native listener
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
+
+    // 2. Temporarily hijack the listener specifically for q5's initialization
+    EventTarget.prototype.addEventListener = function (type, listener, opts) {
+      if (type === 'touchstart' || type === 'touchmove') {
+        const safeOpts = typeof opts === 'object' ? { ...opts } : { capture: !!opts };
+        safeOpts.passive = true; // Force passive
+        return originalAddEventListener.call(this, type, listener, safeOpts);
+      }
+      return originalAddEventListener.call(this, type, listener, opts);
+    };
+
+    // 3. Initialize q5
     const instance = new p5(sketchFactory(container), container);
     instanceRef.current = instance;
+
+    // 4. Immediately restore the native listener
+    EventTarget.prototype.addEventListener = originalAddEventListener;
 
     const isVisible = { current: false };
     const isFocused = { current: !document.hidden };
@@ -58,7 +67,7 @@ export function useP5(sketchFactory, options = {}) {
       document.removeEventListener('visibilitychange', onVisibilityChange);
       setTimeout(() => instance.remove(), 0);
     };
-  }, []);
+  }, [sketchFactory, options.threshold, options.rootMargin]);
 
   return containerRef;
 }

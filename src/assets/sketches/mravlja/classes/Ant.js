@@ -1,5 +1,3 @@
-import p5 from 'p5';
-
 import { state } from './state.js';
 
 export default class Ants {
@@ -140,7 +138,7 @@ class Ant {
     // update location from calculations
     this.vel.add(this.acc);
     this.acc.setMag(0); // reset acceleration
-    this.pos.add(p5.Vector.mult(this.vel, state.dt * 66));
+    this.pos.add(this.vel.copy().mult(state.dt * 66));
   }
 
   get isInFrame() {
@@ -156,7 +154,9 @@ class Ant {
 
   seek(target) {
     // calculate new positions
-    const desiredVel = p5.Vector.sub(target, this.pos);
+    // const desiredVel = target.copy().sub(this.pos);
+    const desiredVel = this.p5.createVector(target.x, target.y).sub(this.pos);
+
     const distance = desiredVel.mag(); // distance to the target
 
     // arrive => slow down
@@ -183,7 +183,7 @@ class Ant {
       desiredVel.setHeading(currentAngle + clampedAngleDiff);
     }
 
-    const correction = p5.Vector.sub(desiredVel, this.vel); // steer === correction
+    const correction = desiredVel.copy().sub(this.vel); // steer === correction
     correction.limit(this.maxForce * state.dt * 66);
     this.applyForce(correction);
   }

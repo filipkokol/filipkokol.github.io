@@ -46,7 +46,7 @@ export default function createSketch(container) {
     };
 
     p.setup = () => {
-      p.noSmooth();
+      // p.noSmooth();
       computeGridSize();
       const { W, H } = canvasDimensions();
       p.createCanvas(W, H);
