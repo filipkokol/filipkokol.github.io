@@ -1,4 +1,4 @@
-import { useP5 } from '../assets/hooks/useP5';
+import { useP5 } from '../hooks/useP5';
 import createSketch from '../assets/sketches/mravlja/sketch';
 
 export default function HeroCanvas() {

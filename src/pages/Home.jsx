@@ -4,7 +4,7 @@ import SelectedProjects from '../sections/SelectedProjects';
 import MoreProjects from '../sections/MoreProjects';
 import Toolbox from '../sections/Toolbox';
 import Cta from '../sections/Cta';
-import usePageTitle from '../assets/hooks/usePageTitle';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Home = () => {
   usePageTitle('Home');

@@ -18,7 +18,7 @@ import Tags from '../components/Tags';
 import NotFound from '../pages/NotFound';
 
 // hooks
-import usePageTitle from '../assets/hooks/usePageTitle';
+import usePageTitle from '../hooks/usePageTitle';
 
 const ProjectDetails = () => {
   const { slug } = useParams();

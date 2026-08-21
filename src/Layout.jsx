@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import Navbar from './sections/Navbar';
+import Navbar from './components/Navbar';
 import Footer from './sections/Footer';
-import useLenis from './assets/hooks/useLenis';
+import useLenis from './hooks/useLenis';
 
 function Layout() {
   useLenis();

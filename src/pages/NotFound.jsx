@@ -1,4 +1,4 @@
-import usePageTitle from '../assets/hooks/usePageTitle';
+import usePageTitle from '../hooks/usePageTitle';
 import { Link } from 'react-router-dom';
 
 import './NotFound.scss';

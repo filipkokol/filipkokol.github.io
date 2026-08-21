@@ -7,7 +7,7 @@ import ScrollArrow from '../assets/img/svgs/scroll-triangle.svg';
 import Rect1 from '../assets/img/svgs/rect1.svg';
 import Rect2 from '../assets/img/svgs/rect2.svg';
 
-import useStickyState from '../assets/hooks/useStickyState';
+import useStickyState from '../hooks/useStickyState';
 import WipeDiv from '../components/WipeDiv';
 
 const Hero = () => {
