@@ -16,8 +16,13 @@ import Loader from './components/Loader';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   useEffect(() => {
-    Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 2000))]).then(() =>
+    const minimumLoadingTime = 1000;
+    const maximumLoadingTime = 3000;
+
+    Promise.all([Promise.race([document.fonts.ready, timeout(maximumLoadingTime)]), timeout(minimumLoadingTime)]).then(() =>
       setIsLoading(false),
     );
   }, []);
