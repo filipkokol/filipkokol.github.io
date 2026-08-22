@@ -5,8 +5,8 @@ import projectImages from '../data/projectImages';
 import { preloadImage } from '../utils';
 
 const ProjectRow = ({ slug, title, desc, tags, color }) => {
-  const imgLarge = projectImages[slug + '.png'];
-  const imgSmall = projectImages[slug + '_sm.png'];
+  const imgLarge = projectImages[slug].lg;
+  const imgSmall = projectImages[slug].sm;
 
   return (
     <>

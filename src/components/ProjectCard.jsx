@@ -4,8 +4,8 @@ import projectImages from '../data/projectImages';
 import { preloadImage } from '../utils';
 
 const ProjectCard = (proj) => {
-  const imgLarge = projectImages[proj.slug + '.png'];
-  const imgSmall = projectImages[proj.slug + '_sm.png'];
+  const imgLarge = projectImages[proj.slug].lg;
+  const imgSmall = projectImages[proj.slug].sm;
 
   return (
     <div className="project-card" onMouseEnter={() => preloadImage(imgLarge)}>

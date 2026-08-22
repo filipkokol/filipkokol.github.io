@@ -30,6 +30,10 @@ const ProjectDetails = () => {
     return <NotFound title="Project not Found." linkText="All Projects" link="/projects" />;
   }
 
+  const imageExtras = Object.entries(images)
+    .filter(([slug]) => new RegExp(project.slug + '-[2-9]').test(slug))
+    .map(([, entry]) => entry.lg);
+
   return (
     <section id="project-details">
       <div className="container">
@@ -49,7 +53,7 @@ const ProjectDetails = () => {
 
         <ScrollFloatDiv delay={0.2}>
           <div className="cover-image" style={{ backgroundColor: project.color }}>
-            <img src={images[project.slug + '.png']} alt="Project hero image" />
+            <img src={images[project.slug].lg} alt="Project hero image" />
           </div>
         </ScrollFloatDiv>
 
@@ -74,15 +78,15 @@ const ProjectDetails = () => {
           )}
         </div>
 
-        {project.img_extras && (
+        {!!imageExtras.length && (
           <div className="img-extras">
             <h2 className="upper">Additional photos</h2>
 
-            <PhotoProvider maskOpacity={0.9} bannerVisible={false}>
+            <PhotoProvider maskOpacity={0.9} bannerVisible={true}>
               <div className="img-row">
-                {project.img_extras.map((img) => (
-                  <PhotoView src={images[img]} key={img}>
-                    <img src={images[img]} alt="Alternative image" />
+                {imageExtras.map((url) => (
+                  <PhotoView src={url} key={url}>
+                    <img src={url} alt="Alternative image" />
                   </PhotoView>
                 ))}
               </div>

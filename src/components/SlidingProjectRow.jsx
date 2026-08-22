@@ -29,8 +29,8 @@ const SlidingProjectRow = ({ projectArr, reverse }) => {
   return (
     <div className="project-row" ref={rowRef}>
       {projectArr.map((proj, i) => {
-        const imgLarge = projectImages[proj.slug + '.png'];
-        const imgSmall = projectImages[proj.slug + '_sm.png'];
+        const imgLarge = projectImages[proj.slug].lg;
+        const imgSmall = projectImages[proj.slug].sm;
 
         return (
           <Link to={`/project/${proj.slug}`} key={i}>

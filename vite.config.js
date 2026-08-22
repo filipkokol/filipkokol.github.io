@@ -1,15 +1,31 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { imagetools } from 'vite-imagetools';
 
 export default defineConfig({
   plugins: [
     react(),
-    ViteImageOptimizer({
-      png: { quality: 81 }, // pri 80 je nek bug na eni sliki
-      jpeg: { quality: 75 },
-      jpg: { quality: 75 },
-      webp: { quality: 75, lossless: false },
+    imagetools({
+      // defaultDirectives: (url) => {
+      //   return new URLSearchParams({
+      //     quality: '75',
+      //     // format: 'avif',
+      //   });
+      // },
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-dom') || id.includes('react/') || id.includes('react-router')) {
+              return 'react';
+            }
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 });

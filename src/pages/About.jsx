@@ -4,7 +4,7 @@ import usePageTitle from '../hooks/usePageTitle';
 
 import './About.scss';
 
-import meImg from '../assets/img/me-1.jpg';
+import meImg from '../assets/img/me-1.jpg?format=webp&quality=40';
 import ScrollFloatDiv from '../components/ScrollFloatDiv';
 
 const About = () => {
