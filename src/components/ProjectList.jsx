@@ -1,13 +1,12 @@
-import projectImages from '../data/projectImages';
 import ProjectRow from './ProjectRow';
 import ScrollFloatDiv from './ScrollFloatDiv';
 
 const ProjectList = ({ projects }) => {
   return (
     <div className="project-list">
-      {projects.map((project, i) => (
+      {projects.map((project) => (
         <ScrollFloatDiv key={project.slug} className="project-row">
-          <ProjectRow {...project} img={projectImages[project.slug + '_sm.png']} isMain={i === 0} />
+          <ProjectRow {...project} />
         </ScrollFloatDiv>
       ))}
     </div>

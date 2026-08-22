@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     ViteImageOptimizer({
-      png: { quality: 80 },
+      png: { quality: 81 }, // pri 80 je nek bug na eni sliki
       jpeg: { quality: 75 },
       jpg: { quality: 75 },
       webp: { quality: 75, lossless: false },

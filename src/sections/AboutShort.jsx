@@ -10,12 +10,12 @@ const AboutShort = () => {
       <div className="container">
         <div className="about-content">
           <WipeDiv className="img-container" start="top">
-            <img src={meImg} alt="Myself" />
+            <img src={meImg} alt="Me" />
           </WipeDiv>
 
           <p className="about-text">
-            I'm a self-taught web developer with years of experience building personal projects and a{' '}
-            <strong>passion</strong> for creating smooth and beautiful user experiences.
+            I'm a self-taught web developer with years of experience building personal projects and a <strong>passion</strong> for creating
+            smooth and beautiful user experiences.
           </p>
         </div>
 

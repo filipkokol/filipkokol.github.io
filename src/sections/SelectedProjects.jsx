@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 
 import projects from '../data/projects';
-import images from '../data/projectImages';
 
 import './SelectedProjects.scss';
 
@@ -28,7 +27,7 @@ const SelectedProjects = () => {
             return (
               <Link to={`/project/${data.slug}`} key={slug}>
                 <FloatUpDiv delay={isMobile ? 0 : 0.2 * i}>
-                  <ProjectCard {...data} img={images[data.slug + '.png']} />
+                  <ProjectCard {...data} />
                 </FloatUpDiv>
               </Link>
             );
@@ -37,9 +36,8 @@ const SelectedProjects = () => {
 
         <ScrollFloatDiv>
           <p className="projects-text">
-            For years I've been building passion projects, from simple <span className="underlined">games</span> and
-            tools, case studies of awarded website designs to more advanced{' '}
-            <span className="underlined">fullstack apps</span>.
+            For years I've been building passion projects, from simple <span className="underlined">games</span> and tools, case studies of
+            awarded website designs to more advanced <span className="underlined">fullstack apps</span>.
           </p>
         </ScrollFloatDiv>
       </div>

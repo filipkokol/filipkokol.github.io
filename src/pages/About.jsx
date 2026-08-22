@@ -42,7 +42,7 @@ const About = () => {
     <section id="about-me">
       <div className="container">
         <WipeDiv className="cover-img" start="top">
-          <img src={meImg} alt="Myself" />
+          <img src={meImg} alt="Me" />
         </WipeDiv>
 
         <FloatUpDiv>
@@ -52,8 +52,8 @@ const About = () => {
         <div className="text-container">
           <FloatUpDiv delay={0.2}>
             <div className="description">
-              {text.map((para) => (
-                <ScrollFloatDiv>
+              {text.map((para, i) => (
+                <ScrollFloatDiv key={i}>
                   <p>{para}</p>
                 </ScrollFloatDiv>
               ))}

@@ -6,17 +6,11 @@ import './MoreProjects.scss';
 import Rect3 from '../assets/img/svgs/rect3.svg';
 
 import projects from '../data/projects';
-import images from '../data/projectImages';
 
 const MoreProjects = () => {
   const sliceLength = projects.length / 3;
 
-  const projectsWithImages = shuffle(
-    projects.map((p) => {
-      const img = images[p.slug + '_sm.png'];
-      return { ...p, img };
-    }),
-  );
+  const projectsWithImages = shuffle(projects);
 
   const slice1 = arraySlice(projectsWithImages, 0, sliceLength);
   const slice2 = arraySlice(projectsWithImages, 0.333, sliceLength);
