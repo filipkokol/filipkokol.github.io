@@ -2,15 +2,16 @@ import SlidingProjectRow from '../components/SlidingProjectRow';
 import WipeDiv from '../components/WipeDiv';
 
 import './MoreProjects.scss';
-
 import Rect3 from '../assets/img/svgs/rect3.svg';
 
 import projects from '../data/projects';
 
+import { shuffled, arraySlice, arrTwice } from '../utils';
+
 const MoreProjects = () => {
   const sliceLength = projects.length / 3;
 
-  const projectsWithImages = shuffle(projects);
+  const projectsWithImages = shuffled(projects);
 
   const slice1 = arraySlice(projectsWithImages, 0, sliceLength);
   const slice2 = arraySlice(projectsWithImages, 0.333, sliceLength);
@@ -35,22 +36,6 @@ const MoreProjects = () => {
       </div>
     </section>
   );
-};
-
-// utility functions
-
-const arrTwice = (arr) => [...arr, ...arr];
-const shuffle = (array) => {
-  for (let i = array.length - 1; i >= 1; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-const arraySlice = (array, startPercentage, length) => {
-  const startIndex = Math.floor(array.length * startPercentage);
-  const endIndex = Math.min(array.length - 1, startIndex + length);
-  return array.slice(startIndex, endIndex);
 };
 
 export default MoreProjects;
