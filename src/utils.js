@@ -8,6 +8,23 @@ export const preloadImage = (imgUrl) => {
   preloadedImages.add(imgUrl);
 };
 
+export const preloadImagePromise = (imgUrl) => {
+  return new Promise((resolve, reject) => {
+    if (preloadedImages.has(imgUrl)) {
+      resolve();
+      return;
+    }
+
+    const img = new Image();
+    img.onload = () => {
+      preloadedImages.add(imgUrl);
+      resolve();
+    };
+    img.onerror = reject;
+    img.src = imgUrl;
+  });
+};
+
 // --- array functions
 export const arrTwice = (arr) => [...arr, ...arr];
 
@@ -24,4 +41,9 @@ export const arraySlice = (array, startPercentage, length) => {
   const startIndex = Math.floor(array.length * startPercentage);
   const endIndex = Math.min(array.length - 1, startIndex + length);
   return array.slice(startIndex, endIndex);
+};
+
+export const isMobile = () => {
+  // NOTE: this is a stupid check that is only used for layout things
+  return window.innerWidth < 768;
 };

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from '../utils';
 
 import projects from '../data/projects';
 

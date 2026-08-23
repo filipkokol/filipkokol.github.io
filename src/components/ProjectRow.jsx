@@ -3,6 +3,7 @@ import Tags from './Tags';
 
 import projectImages from '../data/projectImages';
 import { preloadImage } from '../utils';
+import { isMobile } from '../utils';
 
 const ProjectRow = ({ slug, title, desc, tags, color }) => {
   const imgLarge = projectImages[slug].lg;
@@ -24,6 +25,7 @@ const ProjectRow = ({ slug, title, desc, tags, color }) => {
 
       <Link to={'/project/' + slug} className="project-image" style={{ backgroundColor: color || 'lightblue' }}>
         <img src={imgSmall} alt={title + ' project thumbnail'} onMouseEnter={() => preloadImage(imgLarge)} />
+        {isMobile && <img src={imgLarge} loading="lazy" className="invisible-no-flow" />}
       </Link>
     </>
   );

@@ -263,6 +263,13 @@ h3 {
   opacity: 0;
 }
 
+.invisible-no-flow {
+  opacity: 0;
+  scale: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
 // hovering
 
 @media screen and (hover: hover) {

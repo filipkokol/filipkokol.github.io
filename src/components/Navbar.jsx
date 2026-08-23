@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import './Navbar.scss';
 import SkratekLogo from '../assets/img/svgs/skratek.svg';
-import meImg from '../assets/img/me-1.jpg?format=webp&quality=40';
+import meImg from '../assets/img/me-1.jpg?format=avif&quality=40';
 import { preloadImage } from '../utils';
 
 const Navbar = () => {

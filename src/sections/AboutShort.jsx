@@ -1,5 +1,5 @@
 import './AboutShort.scss';
-import meImg from '../assets/img/me-2.jpg?format=webp&quality=45';
+import meImg from '../assets/img/me-2.jpg?format=avif&quality=45';
 import ArrowIcon from '../assets/img/svgs/arrow1.svg';
 
 import WipeDiv from '../components/WipeDiv';
