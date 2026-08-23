@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import projectImages from '../data/projectImages';
-import { preloadImage } from '../utils';
 
 const SlidingProjectRow = ({ projectArr, reverse }) => {
   const rowRef = useRef(null);
@@ -29,13 +28,12 @@ const SlidingProjectRow = ({ projectArr, reverse }) => {
   return (
     <div className="project-row" ref={rowRef}>
       {projectArr.map((proj, i) => {
-        const imgLarge = projectImages[proj.slug].lg;
         const imgSmall = projectImages[proj.slug].sm;
 
         return (
           <Link to={`/project/${proj.slug}`} key={i}>
             <div className="project-thumb" style={{ backgroundColor: proj.color }}>
-              <img src={imgSmall} alt={proj.title} onMouseEnter={() => preloadImage(imgLarge)} loading="eager" decoding="sync" />
+              <img src={imgSmall} alt={proj.title} loading="eager" decoding="sync" />
             </div>
           </Link>
         );

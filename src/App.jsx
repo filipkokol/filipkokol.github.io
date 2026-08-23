@@ -13,14 +13,14 @@ import ScrollToTop from './components/ScrollToTop';
 
 import Loader from './components/Loader';
 
-// import projectImages from './data/projectImages';
-// import { preloadImagePromise } from './utils';
+import projectImages from './data/projectImages';
+import meImg from './assets/img/me-1.jpg?format=avif&quality=40';
+import { preloadImage } from './utils';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  // const loadImages = () => Promise.all(Object.entries(projectImages).map(([, { lg: largeImgUrl }]) => preloadImagePromise(largeImgUrl)));
 
   useEffect(() => {
     const minimumLoadingTime = 1000;
@@ -28,7 +28,10 @@ function App() {
 
     Promise.all([Promise.race([document.fonts.ready, timeout(maximumLoadingTime)]), timeout(minimumLoadingTime)]).then(() => {
       setIsLoading(false);
-      // setTimeout(loadImages, 3000);
+
+      // load all images
+      const allImages = [meImg, ...Object.entries(projectImages).map(([, { lg: largeImgUrl }]) => largeImgUrl)]; // load Me img and large thumbnails
+      allImages.forEach((url) => preloadImage(url));
     });
   }, []);
 

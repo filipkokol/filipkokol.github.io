@@ -44,6 +44,6 @@ export const arraySlice = (array, startPercentage, length) => {
 };
 
 export const isMobile = () => {
-  // NOTE: this is a stupid check that is only used for layout things
+  // this is very simplistic but i don't need more
   return window.innerWidth < 768;
 };

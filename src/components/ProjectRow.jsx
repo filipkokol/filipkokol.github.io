@@ -2,20 +2,15 @@ import { Link } from 'react-router-dom';
 import Tags from './Tags';
 
 import projectImages from '../data/projectImages';
-import { preloadImage } from '../utils';
-import { isMobile } from '../utils';
 
 const ProjectRow = ({ slug, title, desc, tags, color }) => {
-  const imgLarge = projectImages[slug].lg;
   const imgSmall = projectImages[slug].sm;
 
   return (
     <>
       <div className="text">
         <Link to={'/project/' + slug}>
-          <h3 className="project-title" onMouseEnter={() => preloadImage(imgLarge)}>
-            {title}
-          </h3>
+          <h3 className="project-title">{title}</h3>
         </Link>
         <div className="project-desc">
           <p>{desc}</p>
@@ -24,8 +19,7 @@ const ProjectRow = ({ slug, title, desc, tags, color }) => {
       </div>
 
       <Link to={'/project/' + slug} className="project-image" style={{ backgroundColor: color || 'lightblue' }}>
-        <img src={imgSmall} alt={title + ' project thumbnail'} onMouseEnter={() => preloadImage(imgLarge)} />
-        {isMobile && <img src={imgLarge} loading="lazy" className="invisible-no-flow" />}
+        <img src={imgSmall} alt={title + ' project thumbnail'} />
       </Link>
     </>
   );

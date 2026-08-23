@@ -2,8 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 import './Navbar.scss';
 import SkratekLogo from '../assets/img/svgs/skratek.svg';
-import meImg from '../assets/img/me-1.jpg?format=avif&quality=40';
-import { preloadImage } from '../utils';
 
 const Navbar = () => {
   return (
@@ -18,11 +16,7 @@ const Navbar = () => {
         </NavLink>
 
         <div className="nav-right">
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? 'underlined' : 'underlined-hover')}
-            onMouseEnter={() => preloadImage(meImg)}
-          >
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'underlined' : 'underlined-hover')}>
             <h3 className="">About</h3>
           </NavLink>
           <NavLink to="/projects" className={({ isActive }) => (isActive ? 'underlined' : 'underlined-hover')}>

@@ -26,7 +26,7 @@ const SelectedProjects = () => {
 
             return (
               <Link to={`/project/${data.slug}`} key={slug}>
-                <FloatUpDiv delay={isMobile ? 0 : 0.2 * i}>
+                <FloatUpDiv delay={isMobile() ? 0 : 0.2 * i}>
                   <ProjectCard {...data} />
                 </FloatUpDiv>
               </Link>

@@ -1,17 +1,14 @@
 import Tags from './Tags';
 
 import projectImages from '../data/projectImages';
-import { preloadImage, isMobile } from '../utils';
 
 const ProjectCard = (proj) => {
-  const imgLarge = projectImages[proj.slug].lg;
   const imgSmall = projectImages[proj.slug].sm;
 
   return (
-    <div className="project-card" onMouseEnter={() => preloadImage(imgLarge)}>
+    <div className="project-card">
       <div className="img-container" style={{ backgroundColor: proj.color }}>
         <img src={imgSmall} alt={proj.title + ' project card'} />
-        {isMobile && <img src={imgLarge} loading="lazy" className="invisible-no-flow" />}
       </div>
       <div className="details">
         <p className="project-title">{proj.title}</p>
