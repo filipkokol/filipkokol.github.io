@@ -3,17 +3,7 @@ import react from '@vitejs/plugin-react';
 import { imagetools } from 'vite-imagetools';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    imagetools({
-      // defaultDirectives: (url) => {
-      //   return new URLSearchParams({
-      //     quality: '75',
-      //     // format: 'avif',
-      //   });
-      // },
-    }),
-  ],
+  plugins: [react(), imagetools()],
   build: {
     rollupOptions: {
       output: {

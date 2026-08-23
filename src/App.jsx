@@ -31,7 +31,7 @@ function App() {
 
       // load all images
       const allImages = [meImg, ...Object.entries(projectImages).map(([, { lg: largeImgUrl }]) => largeImgUrl)]; // load Me img and large thumbnails
-      allImages.forEach((url) => preloadImage(url));
+      setTimeout(() => allImages.forEach((url) => preloadImage(url)), 2000);
     });
   }, []);
 
