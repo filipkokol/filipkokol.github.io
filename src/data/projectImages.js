@@ -1,5 +1,10 @@
 const imageModules = import.meta.glob('../assets/img/thumbs/*.png', {
-  query: '?w=1800;500&format=webp&quality=70&withoutEnlargement',
+  query: {
+    w: '1800;500',
+    format: 'avif',
+    quality: '70',
+    withoutEnlargement: true,
+  },
   eager: true,
 });
 
