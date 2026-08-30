@@ -59,6 +59,10 @@ section#project-details {
     gap: var(--space-5);
 
     max-width: 45rem;
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   a.link-wrapper {

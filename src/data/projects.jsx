@@ -1,22 +1,10 @@
+import { Link } from 'react-router-dom';
+
 const projects = [
-  {
-    slug: 'paper-tiger',
-    title: 'Paper Tiger',
-    desc: 'A case-study of an award-winning portfolio with stunning GSAP animations',
-    desc_long: [
-      'Paper tiger is an award-winning website design company. I found their portfolio website on Awwwards as a site of the day and instantly felt the urge to try to build a copy of it. Their animations were captivating. I knew this was the project, through building which I could finally learn modern web animations.',
-      'I deliberately chose to stay away from web frameworks and build everything in plain JavaScript. I used GSAP motion library for animations and Scss for styles.',
-      'Because the main point of this project was learning GSAP, I didn’t bother creating a responsive design, so the website should be viewed on a larger screen, ideally a desktop computer.',
-    ],
-    tags: ['GSAP', 'case study'],
-    category: 'Frontend',
-    color: '#D9D2E9',
-    link_outer: 'https://www.vodnibivol.org/papertiger-study/',
-  },
   {
     slug: 'portfolio',
     title: 'Portfolio',
-    desc: 'This portfolio! Made in React, with GSAP animations',
+    desc: 'This portfolio! Made in React, with motion.dev animations',
     desc_long: [
       "Is it too meta to have a portfolio website listed as a project on your own portfolio? I sure hope not, because it one was one of the most fun projects I've worked on.",
       'I wanted to have a collection of all my projects finally in one place. They have been scattered throughout the web for a long time and a central starting point for all the work had to be made.',
@@ -29,10 +17,29 @@ const projects = [
     color: '#FFDBCC',
   },
   {
+    slug: 'paper-tiger',
+    title: 'Paper Tiger',
+    desc: 'A case-study of an award-winning portfolio with stunning GSAP animations',
+    desc_long: [
+      // prettier-ignore
+      <>Paper tiger is an award-winning website design company. I found their portfolio website on <a href="https://www.awwwards.com/sites/paper-tiger" target='_blank'>Awwwards</a> as the 'site of the day' and instantly felt the urge to try to build a copy of it. Their animations were captivating. I knew this was the project, through building which I could finally learn modern web animations.</>,
+      // prettier-ignore
+      <>I deliberately chose to stay away from web frameworks and build everything in plain JavaScript. I used <a href="https://gsap.com" target='_blank'>GSAP</a> motion library for animations and Scss for styles.</>,
+      'Because the main point of this project was learning GSAP, I didn’t bother creating a responsive design, so the website should be viewed on a larger screen, ideally a desktop computer.',
+    ],
+    tags: ['GSAP', 'case study'],
+    category: 'Frontend',
+    color: '#D9D2E9',
+    link_outer: 'https://www.vodnibivol.org/papertiger-study/',
+  },
+  {
     slug: 'windex',
     title: 'Windex',
     desc: 'A react website based on a Dribbble design',
-    desc_long: ['A react website based on a Dribbble design.', 'Original design by Opndoo.'],
+    desc_long: [
+      'I Found this cool website design on Dribbble and decided to recreate it as a practice in responsive web development and React.',
+      'Designed by Ilias Miah from Opndoo.',
+    ],
     category: 'Frontend',
     tags: ['React', 'TypeScript', 'case-study', 'Dribbble'],
     color: '#D9EAD3',
@@ -45,7 +52,15 @@ const projects = [
     desc_short: 'A text library I made for sharing lesson material in my school',
     desc_long: [
       'The idea behind Knjižarna was to make a shared library of internal resources for the college. During Covid-19 they all became digitized for the purpose of easier student access, bit it was messy and disorganized and every student had to gather all the resources on their own.',
-      'I created everything inside NodeJS, with server-side rendering using EJS. For uploading or editing of the document "wiki", registering an account is required, which is done by sending a token via email. Then, the PDF files can be uploaded to the server, stored inside a NeDB (MongoDB-like) database. Image processing is done by graphicsmagick.',
+      <>
+        I created everything inside NodeJS, with server-side rendering using EJS. For uploading or editing of the document "wiki",
+        registering an account is required, which is done by sending a token via email. Then, the PDF files can be uploaded to the server,
+        stored inside a{' '}
+        <a href="https://github.com/seald/nedb" target="blank">
+          NeDB
+        </a>{' '}
+        (MongoDB-like) database. Image processing is done by graphicsmagick.
+      </>,
       'Additionally, there is in-built support to autocomplete book or article metadata via the Slovenian national library information system COBISS. Resources can be filtered in search by a regex filter.',
       'The design was inspired by early 2000 era website aesthetic, with lovely in-built HTML element styles, styled urls links and themed after the medieval schola.',
     ],
@@ -75,12 +90,28 @@ const projects = [
     desc: 'A workout planning and training timing app',
     desc_long: [
       'This little web app was my try at creating a workout planning and timing app. It was more of an experiment at designing and an exercise in Vue.js.',
-      'I borrowed the data, including images, from acefitness.org. It was meant as a PWA for smartphone, so it is not built with responsive design in mind.',
+      'It allows the user to find excercises and filter them by difficulty, body part and equipment, add them to custom workouts, customize rest duration as well as number of repetitions and sets, read instructions for every exercise and view short tutorials on how to execute the movements. When a workout is created, it can also be used for timing and tracking progress.',
+      // prettier-ignore
+      <>I borrowed the data, including images, from <a href="https://www.acefitness.org">acefitness.org</a>. It was meant as a PWA for smartphone, so it is not built with responsive design in mind.</>,
     ],
     category: 'Frontend',
-    tags: ['Vue.js', 'design'],
+    tags: ['Vue.js', 'PWA', 'design'],
     color: '#D9D2E9',
     link_outer: 'https://www.vodnibivol.org/telovadba/',
+  },
+  {
+    slug: 'ff-news',
+    title: 'University Newsletter',
+    desc: 'An email newsletter for new university website posts',
+    desc_long: [
+      'Our university has a web page dedicated to news and notices. The philosophy department frequently uses this section to communicate urgent news to students (like absence of professors and notifications about cancellation of classes etc.), but sadly there is no option to get notified via an email.',
+      'That’s why I decided to make my own web app, where students from the whole faculty can log in with an email and choose departments that they will follow and get notified about when new notices pop up on the site.',
+      'I used Cheerio for parsing the HTML, for the server NodeJS and Express, the database is made with NeDB and the emails are sent using Nodemailer.',
+    ],
+    category: 'Fullstack',
+    tags: ['Python', 'Web Scraping', 'email', 'MongoDB', 'Raspberry Pi'],
+    color: '#FFCCCC',
+    link_outer: 'https://strojcek.ftp.sh/ff/',
   },
   {
     slug: 'tic-tac-toe',
@@ -187,7 +218,8 @@ const projects = [
     title: 'World Flags',
     desc: 'World flags learning tool',
     desc_long: [
-      'This is a PC-based educational game I built for myself that teaches you world flags, organized by continent. Animations made with Anime.js, graphics by Restcountries.com.',
+      // prettier-ignore
+      <>This is a PC-based educational game I built for myself that teaches you world flags, organized by continent. I developed the core word-ranking algorithm for my <Link to="/project/word-learn">Flashcard app</Link>,  Animations made with Anime.js, graphics by <a href="https://restcountries.com">Restcountries.com</a>.</>,
     ],
     category: 'Frontend',
     tags: ['Anime.js'],
@@ -198,6 +230,12 @@ const projects = [
     slug: 'word-learn',
     title: 'Word Learn',
     desc: 'A flashcard-like app for learning new words or concepts',
+    desc_long: [
+      'I made this app when learning latin in college. I was not satisfied with the available options and wanted to try creating my own flashcard-like app for learning words.',
+      "My premise was simple: repeat as many times as possible and quickly, and make it enjoyable. I built a custom algorithm that would sort words by your confidence in memory recall. The student creates their own sets of words in 'key: value' pairs and just pastes the raw text into the app, which immediately recognizes the yaml-like format and generates the flashcards. After roughly two successful rounds it outputs a list or words that the student struggled most with, in the same key-value format, which can then again be pasted raw into the main text area and improved on.",
+      // prettier-ignore
+      <>I reused a modified version of the word-ranking algorithm in the <Link to="/project/world-flags">World Flag learning tool</Link>.</>,
+    ],
     category: 'Frontend',
     tags: ['Vue.js'],
     color: '#FFF3CC',
@@ -208,7 +246,9 @@ const projects = [
     title: 'Paint App',
     desc: 'Exploring low-level graphics and JavaScript Canvas API',
     desc_long: [
-      'A minimalist web-based recreation of old Microsoft Paint, created entirely from scratch as a study in math and low-level JS graphics.',
+      'This web app is a minimalist recreation of old Windows XP-era Microsoft Paint, created entirely from scratch as a study in math and low-level JS graphics.',
+      // prettier-ignore
+      <>I built it with pure JavaScript, with no graphics libraries, using only <a href="https://alpinejs.dev" target='_blank'>Alpine.js</a> for minimal reactivity. Instead of relying on p5, like in many other projects, I tried to built every drawing function from scratch, including pixel, line and circle rendering.</>,
     ],
     category: 'Frontend',
     tags: ['Canvas API', 'Alpine.js'],
@@ -219,6 +259,9 @@ const projects = [
     slug: 'morse-translator',
     title: 'Morse Translator',
     desc: 'Realtime morse code translator tool',
+    desc_long: [
+      'I created this realtime morse translator as a coding challenge when I started learning JavaScript. I wanted to make it realtime and work in both directions and at the same time make the code as minimal as possible.',
+    ],
     category: 'Frontend',
     tags: [],
     color: '#D9EAD3',
@@ -241,6 +284,13 @@ const projects = [
     slug: 'word-of-the-day',
     title: 'Word of the Day',
     desc: 'A website that displays a rare dictionary entry every day',
+    desc_long: [
+      'I think this was my first website ever. It just shows a rare Slovenian word every day, along with its meaning.',
+      // prettier-ignore
+      <>I basically scraped the whole Slovenian dictionary from <a href="https://fran.si" target="_blank">fran.si</a> using Python and split it into separate JSON chunks. Then I wrote a very basic pseudo-random number generator that would take the current day as a seed and fetch the entry.</>,
+      // prettier-ignore
+      <>Apart from getting the dictionary entries, I also had to rank words based on their frequency, and for that I used data from <a href="https://www.clarin.si/info/concordances/#noSketch_Engine" target='_blank'>NoSketch Engine</a>, merged with dictionary entries using Python.</>,
+    ],
     category: 'Frontend',
     tags: ['Python'],
     color: '#D3E0EA',
@@ -312,20 +362,6 @@ const projects = [
     tags: ['Web Audio API'],
     color: '#D0E2F3',
     link_outer: 'https://www.vodnibivol.org/vremenska_napoved/',
-  },
-  {
-    slug: 'ff-news',
-    title: 'University Newsletter',
-    desc: 'An email newsletter for new university website posts',
-    desc_long: [
-      'Our university has a web page dedicated to news and notices. The philosophy department frequently uses this section to communicate urgent news to students (like absence of professors and notifications about cancellation of classes etc.), but sadly there is no option to get notified via an email.',
-      'That’s why I decided to make my own web app, where students from the whole faculty can log in with an email and choose departments that they will follow and get notified about when new notices pop up on the site.',
-      'I used Cheerio for parsing the HTML, for the server NodeJS and Express, the database is made with NeDB and the emails are sent using Nodemailer.',
-    ],
-    category: 'Fullstack',
-    tags: ['Python', 'Web Scraping', 'email', 'MongoDB', 'Raspberry Pi'],
-    color: '#FFCCCC',
-    link_outer: 'https://strojcek.ftp.sh/ff/',
   },
 ];
 
